@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="fluig-style-guide">
-		<div name="form" role="form">
+		<form name="form" role="form">
 		<!-- Identificação Colaborador -->
 			<div class="panel panel-default" id="indentificacao_colaborador">
 				<div class="panel-heading">
@@ -22,7 +22,7 @@
 							<input type="text" id="colab_nome" name="colab_nome" class="form-control"readonly>
 						</div>
 					</div>
-					<div>
+					<div class="row">
 						<div class="col-md-12">
 							<label for="colab_setor">Setor</label>
 							<!-- Select Setor -->
@@ -34,7 +34,7 @@
 							</select>
 						</div>
 					</div>
-					<div>
+					<div class="row">
 						<div class="col-md-12">
 							<label for="colab_matricula">Matricula</label>
 							<!-- Input Matricula -->
@@ -43,64 +43,64 @@
 					</div>
 				</div>
 			</div>
-		<!-- FIM :: Identificação Colaborador -->
-		<!-- Motivo Checkbox -->
-		<div class="panel panel-default" id="Motivo_checkbox">
-			<div class="panel-heading">
-				<h3 class="panel-title"><b>Motivo</b></h3>
-			</div>
-			<div class="panel-body">
-				<div class="row">
-					<!-- Checkbox Motivo -->
-					<div class="col-md-6">
-						<label><input type="checkbox" name="atraso"></label>
-						<label><input type="checkbox" name="saida_antecipada"></label>
-						<label><input type="checkbox" name="ausencia_marcacao_saida"></label>
-						<label><input type="checkbox" name="folga"></label>
-					</div>
-					<div class="col-md-6">
-						<label><input type="checkbox" name="saida_durante_expediente"></label>
-						<label><input type="checkbox" name="falta_ausencia_meio_periodo"></label>
-						<label><input type="checkbox" name="falta_ausencia_integral"></label>
-					</div>
+			<!-- FIM :: Identificação Colaborador -->
+			<!-- Motivo Checkbox -->
+			<div class="panel panel-default" id="Motivo_checkbox">
+				<div class="panel-heading">
+					<h3 class="panel-title"><b>Motivo</b></h3>
 				</div>
-				<div class="row">
+				<div class="panel-body">
+					<div class="row">
+						<!-- Checkbox Motivo -->
+						<div class="col-md-6">
+							<label><input type="checkbox" name="atraso"></label>
+							<label><input type="checkbox" name="saida_antecipada"></label>
+							<label><input type="checkbox" name="ausencia_marcacao_saida"></label>
+							<label><input type="checkbox" name="folga"></label>
+						</div>
+						<div class="col-md-6">
+							<label><input type="checkbox" name="saida_durante_expediente"></label>
+							<label><input type="checkbox" name="falta_ausencia_meio_periodo"></label>
+							<label><input type="checkbox" name="falta_ausencia_integral"></label>
+						</div>
+					</div>
+					<div class="row">
 					<!-- Anexo Foto/Atestado -->
-					<div class="col-md-12">
-						<label><input type="file" name="anexo" multiple="multiple"></label>
+						<div class="col-md-12">
+							<label><input type="file" name="anexo" multiple="multiple"></label>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- FIM :: Motivo Checkbox-->
-		<!-- Motivo Por Escrito -->
-		<div class="panel panel-default" id="justificativa">
-			<div class="panel-heading">
-				<h3 class="panel-title"><b>Justificativa</b></h3>
+			<!-- FIM :: Motivo Checkbox-->
+			<!-- Motivo Por Escrito -->
+			<div class="panel panel-default" id="justificativa">
+				<div class="panel-heading">
+					<h3 class="panel-title"><b>Justificativa</b></h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<!-- Caixa de texto justificativa -->
+						<div class="col-md-12">
+							<textarea name="justificativa_escrito"></textarea>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="panel-body">
+			<!-- FIM :: Motivo Por Escrito -->
+			<!-- Data e Assinatura -->
+			<div class="panel panel-default" id="data_assinatura">
+				<div class="panel-heading">
+					<h3 class="panel-title"><b>Data e Assinatura</b></h3>
+				</div>
 				<div class="row">
-					<!-- Caixa de texto justificativa -->
+					<!-- Data de entrega do Atestado & Assinatura -->
 					<div class="col-md-12">
-						<textarea name="justificativa_escrito"></textarea>
+						<label for="data_entrega_justificativa"><input type="text" id="data_entrega_justificativa" name="data_entrega_justificativa"></label>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- FIM :: Motivo Por Escrito -->
-		<!-- Data e Assinatura -->
-		<div class="panel panel-default" id="data_assinatura">
-			<div class="panel-heading">
-				<h3 class="panel-title"><b>Data e Assinatura</b></h3>
-			</div>
-			<div class="row">
-				<!-- Data de entrega do Atestado & Assinatura -->
-				<div class="col-md-12">
-					<label for="data_entrega_justificativa"><input type="text" id="data_entrega_justificativa" name="data_entrega_justificativa"></label>
-				</div>
-			</div>
-		</div>
-		<!-- FIM :: Data e Assinatura -->
+			<!-- FIM :: Data e Assinatura -->
 		</form>
 	</div>
 </body>
