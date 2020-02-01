@@ -38,7 +38,7 @@
 						<div class="col-md-12">
 							<label for="colab_matricula">Matricula</label>
 							<!-- Input Matricula -->
-							<input type="text" id="colab_matricula" name="colab_matricula" class="form-control" mask="000.0000.000" readonly>
+							<input type="text" id="colab_matricula" name="colab_matricula" class="form-control" mask="000.000" readonly>
 						</div>
 					</div>
 				</div>
@@ -53,15 +53,19 @@
 					<div class="row">
 						<!-- Checkbox Motivo -->
 						<div class="col-md-6">
-							<label><input type="checkbox" name="atraso"></label>
-							<label><input type="checkbox" name="saida_antecipada"></label>
-							<label><input type="checkbox" name="ausencia_marcacao_saida"></label>
-							<label><input type="checkbox" name="folga"></label>
+							<div class="checkbox">
+								<label><input type="checkbox" name="atraso" value="">Atraso</label>
+								<label><input type="checkbox" name="saida_antecipada" value=""></label>
+								<label><input type="checkbox" name="ausencia_marcacao_saida" value=""></label>
+								<label><input type="checkbox" name="folga" value=""></label>
+							</div>
 						</div>
 						<div class="col-md-6">
-							<label><input type="checkbox" name="saida_durante_expediente"></label>
-							<label><input type="checkbox" name="falta_ausencia_meio_periodo"></label>
-							<label><input type="checkbox" name="falta_ausencia_integral"></label>
+							<div class="checkbox">
+								<label><input type="checkbox" name="saida_durante_expediente" value=""></label>
+								<label><input type="checkbox" name="falta_ausencia_meio_periodo" value=""></label>
+								<label><input type="checkbox" name="falta_ausencia_integral"></label>
+							</div>
 						</div>
 					</div>
 					<div class="row">
