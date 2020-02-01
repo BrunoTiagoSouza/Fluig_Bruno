@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="fluig-style-guide">
-		<form name="form" role="form">
+		<div name="form" role="form">
 		<!-- Identificação Colaborador -->
 			<div class="panel panel-default" id="indentificacao_colaborador">
 				<div class="panel-heading">
@@ -16,20 +16,29 @@
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-md-2">
+						<div class="col-md-12">
 							<label for="colab_nome">Nome</label>
 							<!-- Input Nome -->
-							<input type="text" id="colab_nome" name="colab_nome" class="form-control" readonly>
+							<input type="text" id="colab_nome" name="colab_nome" class="form-control"readonly>
 						</div>
-						<div class="col-md-2">
+					</div>
+					<div>
+						<div class="col-md-12">
 							<label for="colab_setor">Setor</label>
-							<!-- Input Setor -->
-							<input type="text" id="colab_setor" name="colab_setor" class="form-control" readonly>
+							<!-- Select Setor -->
+							<select id="colab_setor" name="colab_setor" class="form-control" readonly>
+								<option>Lojistica</option>
+								<option>Usinagem</option>
+								<option>Planejamento</option>
+								<option>Financeiro</option>
+							</select>
 						</div>
-						<div class="col-md-2">
+					</div>
+					<div>
+						<div class="col-md-12">
 							<label for="colab_matricula">Matricula</label>
 							<!-- Input Matricula -->
-							<input type="text" id="colab_matricula" name="colab_matricula" class="form-control" readonly>
+							<input type="text" id="colab_matricula" name="colab_matricula" class="form-control" mask="000.0000.000" readonly>
 						</div>
 					</div>
 				</div>
@@ -73,7 +82,7 @@
 				<div class="row">
 					<!-- Caixa de texto justificativa -->
 					<div class="col-md-12">
-						<textarea></textarea>
+						<textarea name="justificativa_escrito"></textarea>
 					</div>
 				</div>
 			</div>
