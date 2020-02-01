@@ -72,8 +72,8 @@
 						<div class="panel-body">
 						<!-- Anexo Foto/Atestado -->
 							<div class="col-md-12">
-								<button type="submit" class="btn btn-default">Enviar</button>
-								<span class="help-block">Clique em enviar, selecione uma foto do atestado, declaração de presença ou outro documento para justificativa.</span>
+								<label for="enviar_arquivo"><input type="file" id="enviar_arquivo" name="enviar_arquivo"></label>
+								<p class="help-block">Selecione uma foto do atestado, declaracao de comparecimento ou documento de justificativa.</p>
 							</div>
 						</div>
 					</div>
@@ -104,6 +104,8 @@
 					<!-- Data de entrega do Atestado & Assinatura -->
 					<div class="col-md-12">
 						<label for="data_entrega_justificativa"><input type="text" id="data_entrega_justificativa" name="data_entrega_justificativa"></label>
+						<button type="submit" class="btn btn-default">Enviar</button>
+						<span class="help-block">Clique em enviar, selecione uma foto do atestado, declaração de presença ou outro documento para justificativa.</span>
 					</div>
 				</div>
 			</div>
