@@ -1,0 +1,166 @@
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+    <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+    <script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="jquery.maskMoney.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="fluig-style-guide">
+        <form name="form" role="form">
+            <!-- Empresa -->
+            <div class="panel panel-default" id="empresa">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><b>Empresa</b></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label for="emp_cod">Cód. Empresa</label>
+                            <input type="text" id="emp_cod" name="emp_cod" class="form-control" readonly>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="emp_razao">Razão Social</label>
+                            <input type="text" id="emp_razao" name="emp_razao" class="form-control" readonly>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="emp_cnpj">CNPJ</label>
+                            <input type="text" id="emp_cnpj" name="emp_cnpj" class="form-control"
+                                mask="00.000.000/0000-00" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM:: Empresa -->
+            <!-- Empregado -->
+            <div class="panel panel-default" id="empregado">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><b>Informaçoes do Empregado</b></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="emp_cpf">CPF</label>
+                            <input type="text" name="emp_cpf" id="emp_cpf" class="form-control input_empregado"
+                                mask="000.000.000-00">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="emp_nome">Nome do Colaborador</label>
+                            <input type="text" name="emp_nome" id="emp_nome" class="form-control input_empregado">
+                        </div>
+                        <div class="col-md-3">
+                            <label>Benefício</label>
+                            <br>
+                            <input type="hidden" name="vt_hidden" id="vtcheckbox_hidden">
+                            <div class="custom-checkbox custom-checkbox-inline custom-checkbox-info">
+                                <input type="checkbox" name="vt" value="vt" id="vtcheckbox">
+                                <label for="vtcheckbox">VT</label>
+                            </div>
+                            <input type="hidden" name="vr_hidden" id="vrcheckbox_hidden">
+                            <div class="custom-checkbox custom-checkbox-inline custom-checkbox-info">
+                                <input type="checkbox" name="vr" value="vr" id="vrcheckbox">
+                                <label for="vrcheckbox">VR</label>
+                            </div>
+                            <input type="hidden" name="va_hidden" id="vacheckbox_hidden">
+                            <div class="custom-checkbox custom-checkbox-inline custom-checkbox-info">
+                                <input type="checkbox" name="va" value="va" id="vacheckbox">
+                                <label for="vacheckbox">VA</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM:: Empregago -->
+            <!-- Análise RH -->
+            <div class="panel panel-default" id="beneficio">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><b>Análise</b></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row" id="div_aprovado">
+                        <div class="col-md-12">
+                            <label>Aprovado</label>
+                            <br>
+                            <div class="custom-radio custom-radio-inline custom-radio-success">
+                                <input type="radio" id="aprovados" name="aprovado" value="sim">
+                                <label for="aprovados">Sim</label>
+                            </div>
+                            <div class="custom-radio custom-radio-inline custom-radio-danger">
+                                <input type="radio" id="aprovadon" name="aprovado" value="nao">
+                                <label for="aprovadon">Nao</label>
+                            </div>
+                            <input type="hidden" name="aprovado_hidden">
+                        </div>
+                    </div>
+                    <div class="row" id="div_vt_inputs" style="display: none;">
+                        <hr>
+                        <div class="col-md-3">
+                            <label for="emp_vt">Cartao VT</label>
+                            <input type="text" name="emp_vt" id="cod_vt" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="saldo">Saldo</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="text" id="saldo" name="saldo" class="form-control money" data-thousands="."
+                                    data-decimal=",">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="div_va_vr_inputs" style="display: none;">
+                        <hr>
+                        <div class="col-md-3">
+                            <label for="val_total">Valor do Beneficio</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="text" id="val_total" name="val_total" class="form-control money"
+                                    data-thousands="." data-decimal=",">
+                            </div>
+                        </div>
+                        <div class="col-md-3" id="input_vr" style="display:none;">
+                            <label for="val_vr">Valor do VR</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="text" id="val_vr" name="val_vr" class="form-control money"
+                                    data-thousands="." data-decimal=",">
+                            </div>
+                        </div>
+                        <div class="col-md-3" id="input_va" style="display: none;">
+                            <label for="val_va">Valor do VA</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="text" id="val_va" name="val_va" class="form-control money"
+                                    data-thousands="." data-decimal=",">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM:: Análise RH-->
+            <!-- Providênciar -->
+            <div class="panel panel-default" id="aprovacao">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><b>Providenciar</b></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="custom-checkbox custom-checkbox-info">
+                                <input type="checkbox" name="providenciado" value="providenciado" id="providenciado">
+                                <label for="providenciado">Solicitação providênciada</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM:: Providênciar -->
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
