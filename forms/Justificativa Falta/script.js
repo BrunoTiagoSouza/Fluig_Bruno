@@ -5,7 +5,11 @@ $(document).ready(function (){
         showAllDoc();
     }
 
-    $("#colab_matricula").mask('000.000', {reverse: true});
+    $("#colab_matricula").mask('000.000');
+
+    if(CURRENTE_STATE === 2){
+        
+    }
     
 });
 
@@ -29,8 +33,8 @@ function beforeSendValidate(numState, nextState){
             msg += "Arquivo invalido. verifique se o arquivo é jpg, png, gif, pdf, txt, doc, docx.<br>";
         }
 
-    } else if (CURRENT_STATE === 2 ){
-
+    } else if (CURRENT_STATE === 14 ){
+        msg += "Registro alterado!";
     }
 
     if(msg !== ''){
@@ -39,14 +43,11 @@ function beforeSendValidate(numState, nextState){
 
 };
 
-/*function validaAnexo(){
-    var arquivo_enviado = $("#enviar_arquivo").val();
-    var ext_Permitidas = ['jpg', 'png', 'gif', 'pdf', 'txt', 'doc', 'docx'];
-    console.log(arquivo_enviado.get(0).files[0].size);
-
-    //funcao validando presença e extensao do arquivo....
-    
-
+function escondeCampos(CURRENT_STATE){
+    if(CURRENT_STATE === 1 || CURRENT_STATE === 0){
+        $('#justificativa').hide();
+        $('#registro').hide();
+    } else if (CURRENT_STATE === 5){
+        $('#registro').hide();
     }
-
-}*/
+}
