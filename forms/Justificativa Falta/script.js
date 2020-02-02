@@ -33,6 +33,10 @@ function beforeSendValidate(currentState, nextStage){
 
     }
 
+    if(msg !== ''){
+        throw(msg);
+    }
+
 };
 
 /*function validaAnexo(){
