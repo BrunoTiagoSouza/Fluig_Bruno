@@ -321,7 +321,20 @@
       <digitalSignature>false</digitalSignature>
     </ProcessState>
   </list>
-  <list/>
+  <list>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>JustificativaFalta</processId>
+        <expressionOrder>1</expressionOrder>
+        <version>1</version>
+        <sequence>12</sequence>
+      </conditionProcessStatePK>
+      <condition></condition>
+      <destinationSequenceId>16</destinationSequenceId>
+      <conditionType>1</conditionType>
+    </ConditionProcessState>
+  </list>
   <list>
     <ProcessLink>
       <processLinkPK>
@@ -539,5 +552,24 @@
   <list/>
   <list/>
   <list/>
-  <list/>
+  <list>
+    <ConditionProcessAutomaticRules>
+      <sequence>12</sequence>
+      <expressionOrder>1</expressionOrder>
+      <ruleOrder>1</ruleOrder>
+      <field>aceito</field>
+      <value>aceito</value>
+      <operator>7</operator>
+      <valueType>0</valueType>
+    </ConditionProcessAutomaticRules>
+    <ConditionProcessAutomaticRules>
+      <sequence>12</sequence>
+      <expressionOrder>1</expressionOrder>
+      <ruleOrder>2</ruleOrder>
+      <field>n_aceito</field>
+      <value>n_aceito</value>
+      <operator>7</operator>
+      <valueType>0</valueType>
+    </ConditionProcessAutomaticRules>
+  </list>
 </list>
