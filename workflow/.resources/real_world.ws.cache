@@ -10,6 +10,53 @@
    </array>
   </void>
   <void method="put">
+   <string>camposFormulario, documentoId = 213</string>
+   <array class="java.lang.String" length="14">
+    <void index="0">
+     <string>atraso</string>
+    </void>
+    <void index="1">
+     <string>ausencia_marcacao_saida</string>
+    </void>
+    <void index="2">
+     <string>colab_matricula</string>
+    </void>
+    <void index="3">
+     <string>colab_nome</string>
+    </void>
+    <void index="4">
+     <string>colab_setor</string>
+    </void>
+    <void index="5">
+     <string>data_entrega_justificativa</string>
+    </void>
+    <void index="6">
+     <string>enviar_arquivo</string>
+    </void>
+    <void index="7">
+     <string>falta_ausencia_integral</string>
+    </void>
+    <void index="8">
+     <string>falta_saida_meio_periodo</string>
+    </void>
+    <void index="9">
+     <string>folga</string>
+    </void>
+    <void index="10">
+     <string>justificativa_escrito</string>
+    </void>
+    <void index="11">
+     <string>outro</string>
+    </void>
+    <void index="12">
+     <string>saida_antecipada</string>
+    </void>
+    <void index="13">
+     <string>saida_durante_expediente</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
    <string>fichario</string>
    <object class="java.util.ArrayList">
     <void method="add">
@@ -1691,16 +1738,16 @@
      <string>va</string>
     </void>
     <void index="11">
-     <string>val_total</string>
+     <string>va_hidden</string>
     </void>
     <void index="12">
-     <string>val_va</string>
+     <string>val_total</string>
     </void>
     <void index="13">
-     <string>val_vr</string>
+     <string>val_va</string>
     </void>
     <void index="14">
-     <string>va_hidden</string>
+     <string>val_vr</string>
     </void>
     <void index="15">
      <string>vr</string>

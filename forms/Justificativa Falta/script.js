@@ -9,7 +9,7 @@ $(document).ready(function (){
     
 });
 
-function beforeSendValidate(currentState, nextStage){
+function beforeSendValidate(numState, nextState){
     var msg = "";
     var ext_Permitidas = ['jpg', 'png', 'gif', 'pdf', 'txt', 'doc', 'docx'];
 

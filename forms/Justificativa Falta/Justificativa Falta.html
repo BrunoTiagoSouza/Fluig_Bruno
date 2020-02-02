@@ -51,7 +51,6 @@
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						<!-- Checkbox Motivo -->
 						<div class="col-md-12">
 							<div class="row">
 								<div class="col-md-6">
@@ -151,12 +150,50 @@
 			</div>
 			<!-- FIM :: Data e Assinatura -->
 			<!-- Análise RH -->
+			<div class="panel panel-default" id="justificativa">
+				<div class="panel-heading">
+					<h3 class="panel-title">Análise</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row" id="res_analise">
+						<div class="col-md-12">
+						<label>Aprovado</label>
+                            <br>
+                            <div class="checkbox">
+                                <input type="checkbox" id="aceito" name="aceito" value="sim">
+                                <label for="aceito">Sim</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="n_aceito" name="n_aceito" value="nao">
+                                <label for="n_aceito">Nao</label>
+							</div>
+							<input type="hidden" name="aceito_hidden">
+						</div>
+					</div>
 
+				</div>
+			</div>
 			<!-- FIM :: Análise RH -->
-			<!-- Providenciar -->
-			<!-- FIM :: Providenciar -->
+			<!-- Registro Ponto Alterado -->
+			<div class="panel panel-default" id="registro">
+				<div class="panel-heading">
+					<h3 class="panel-title">Registro Ponto Alterado Com Sucesso!</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row" id="modificacoes">
+						<div class="col-md-12">
+						<label>Aprovado</label>
+			<!-- FIM :: Registro Ponto Alterado -->
 		</form>
 	</div>
 	<script src="script.js"></script>
+	<script>
+		var beforeSendValidate = function(numState, nextState){
+			console.log(" -beforeSendValidate-");
+			console.log("numState: " + numState);
+			console.log("nextState: " + nextState);
+			throw("Erro Xyz");
+		}
+	</script>
 </body>
 </html>
