@@ -6,6 +6,7 @@ $(document).ready(function (){
     }
 
     $("#colab_matricula").mask('000.000');
+    $("#data_entrega_justificativa").mask('00/00/0000');
 
     if(CURRENTE_STATE === 2){
         $('input[name="aceito"]').on('change', function () {
@@ -147,7 +148,7 @@ function escondeCampos(CURRENT_STATE){
             $('input[name="falintegral_hidden"]').attr("checked", "checked");
         }
     }
-}
+};
 
 function showAllDoc(){
     if($('input[name="atraso_hidden"]').val() !== ""){
