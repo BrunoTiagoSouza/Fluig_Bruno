@@ -8,7 +8,13 @@ $(document).ready(function (){
     $("#colab_matricula").mask('000.000');
 
     if(CURRENTE_STATE === 2){
-
+        $('input[name="aceito"]').on('change', function () {
+            if ($(this).val() === 'sim') {
+                $('input[name="aceito_hidden"]').val('S');
+            } else{
+                $('input[name="aceito_hidden"]').val('N');
+            }
+        });
     }
     
 });
@@ -58,17 +64,18 @@ function beforeSendValidate(numState, nextState){
         if($('input[name="ausencia_marcacao_saida"]:checked').val() === 'ausencia_marcacao_saida'){
             $('input[name="outro_hidden"]').val('ausencia_marcacao_saida');
         }
-        if($('input[name="folga"]:checked').val() === 'atraso'){
+        if($('input[name="folga"]:checked').val() === 'folga'){
             $('input[name="folga_hidden"]').val('atraso');
         }
         if($('input[name="falta_ausencia_integral"]:checked').val() === 'falta_ausencia_integral'){
             $('input[name="falintegral_hidden"]').val('falta_ausencia_integral');
         }
-
-    } else if (CURRENT_STATE === 14 ){
-        msg += "Registro alterado!";
+    } else if(CURRENTE_STATE === 5){
+        //valida a justificativa
+        if(!($('input[name="aceito"]:checked').val())){
+            msg += "Voce deve aceitar ou negar a justificativa";
+        } 
     }
-
     if(msg !== ''){
         throw(msg);
     }
@@ -81,5 +88,62 @@ function escondeCampos(CURRENT_STATE){
         $('#registro').hide();
     } else if (CURRENT_STATE === 5){
         $('#registro').hide();
+
+        $('.input_colab').attr('readonly', 'readonly');
+        $('#durante_checkbox').attr('disabled', 'disabled');
+        $('#saidurante_checkbox').attr('disabled', 'disabled');
+        $('#saiantes_checkbox').attr('disabled', 'disabled');
+        $('#faltameio_checkbox').attr('disabled', 'disabled');
+        $('#n_marca_checkbox').attr('disabled', 'disabled');
+        $('#outro_checkbox').attr('disabled', 'disabled');
+        $('#folga_checkbox').attr('disabled', 'disabled');
+        $('#faltinte_checkbox').attr('disabled', 'disabled');
+
+        //utilizando os checkbox guardados
+        if($('input[name="atraso"]').val() === ""){
+            $('input[name="atraso_hidden"]').attr("checked", "checked");
+        }
+        if($('input[name="saida_durante_expediente"]').val() === ""){
+            $('input[name="saidurante_hidden"]').attr("checked", "checked");
+        }
+        if($('input[name="saida_antecipada"]').val() === ""){
+            $('input[name="saiantes_hidden"]').attr("checked", "checked");
+        }
+        if($('input[name="falta_saida_meio_periodo"]').val() === ""){
+            $('input[name="falmeio_hidden"]').attr("checked", "checked");
+        }
+        if($('input[name="ausencia_marcacao_saida"]').val() === ""){
+            $('input[name="outro_hidden"]').attr("checked", "checked");
+        }
+        if($('input[name="folga"]').val() === ""){
+            $('input[name="folga_hidden"]').attr("checked", "checked");
+        }
+        if($('input[name="falta_ausencia_integral"]').val() === ""){
+            $('input[name="falintegral_hidden"]').attr("checked", "checked");
+        }
+    } else if(CURRENT_STATE === 8){
+
+        //Marca os checkbox escolhidos
+        if($('input[name="atraso"]').val() === ""){
+            $('input[name="atraso_hidden"]').attr("checked", "checked");
+        }
+        if($('input[name="saida_durante_expediente"]').val() === ""){
+            $('input[name="saidurante_hidden"]').attr("checked", "checked");
+        }
+        if($('input[name="saida_antecipada"]').val() === ""){
+            $('input[name="saiantes_hidden"]').attr("checked", "checked");
+        }
+        if($('input[name="falta_saida_meio_periodo"]').val() === ""){
+            $('input[name="falmeio_hidden"]').attr("checked", "checked");
+        }
+        if($('input[name="ausencia_marcacao_saida"]').val() === ""){
+            $('input[name="outro_hidden"]').attr("checked", "checked");
+        }
+        if($('input[name="folga"]').val() === ""){
+            $('input[name="folga_hidden"]').attr("checked", "checked");
+        }
+        if($('input[name="falta_ausencia_integral"]').val() === ""){
+            $('input[name="falintegral_hidden"]').attr("checked", "checked");
+        }
     }
 }

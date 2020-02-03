@@ -19,14 +19,14 @@
 						<div class="col-md-12">
 							<label for="colab_nome">Nome</label>
 							<!-- Input Nome -->
-							<input type="text" id="colab_nome" name="colab_nome" class="form-control">
+							<input type="text" id="colab_nome" name="colab_nome" class="form-control input_colab">
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="colab_setor">Setor</label>
 							<!-- Select Setor -->
-							<select id="colab_setor" name="colab_setor" class="form-control">
+							<select id="colab_setor" name="colab_setor" class="form-control input_colab">
 								<option>Lojistica</option>
 								<option>Usinagem</option>
 								<option>Planejamento</option>
@@ -38,7 +38,7 @@
 						<div class="col-md-12">
 							<label for="colab_matricula">Matricula</label>
 							<!-- Input Matricula -->
-							<input type="text" id="colab_matricula" name="colab_matricula" class="form-control" mask="000.000">
+							<input type="text" id="colab_matricula" name="colab_matricula" class="form-control input_colab" mask="000.000">
 						</div>
 					</div>
 				</div>
@@ -56,13 +56,13 @@
 								<div class="col-md-6">
 									<input type="hidden" name="atraso_hidden" id="atraso_checkbox_hidden">
 									<div class="checkbox">
-										<label><input type="checkbox" name="atraso" value="">Atraso</label>
+										<label><input type="checkbox" name="atraso" id="atraso_checkbox" value="">Atraso</label>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<input type="hidden" name="saidurante_hidden" id="saidurante_checkbox_hidden">
 									<div class="checkbox">
-										<label><input type="checkbox" name="saida_durante_expediente" value="">Saida durante expediente</label>
+										<label><input type="checkbox" name="saida_durante_expediente" id="saidurante_checkbox" value="">Saida durante expediente</label>
 									</div>
 								</div>
 							</div>
@@ -70,13 +70,13 @@
 								<div class="col-md-6">
 									<input type="hidden" name="saiantes_hidden" id="saiantes_checkbox_hidden">
 									<div class="checkbox">	
-										<label><input type="checkbox" name="saida_antecipada" value="">Antecipação do horario de saida</label>
+										<label><input type="checkbox" name="saida_antecipada" id="saiantes_checkbox" value="">Antecipação do horario de saida</label>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<input type="hidden" name="falmeio_hidden" id="falmeio_checkbox_hidden">
 									<div class="checkbox">
-										<label><input type="checkbox" name="falta_saida_meio_periodo" value="">Falta/Saida meio periodo.</label>
+										<label><input type="checkbox" name="falta_saida_meio_periodo"  id="faltameio_checkbox" value="">Falta/Saida meio periodo.</label>
 									</div>
 								</div>
 							</div>
@@ -84,13 +84,13 @@
 								<div class="col-md-6">
 									<input type="hidden" name="ausencia_hidden" id="ausencia_checkbox_hidden">
 									<div class="checkbox">
-										<label><input type="checkbox" name="ausencia_marcacao_saida" value="">Ausência de marcação de ponto</label>
+										<label><input type="checkbox" name="ausencia_marcacao_saida"  id="n_marca_checkbox" value="">Ausência de marcação de ponto</label>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<input type="hidden" name="outro_hidden" id="outro_checkbox_hidden">
 									<div class="checkbox">
-										<label><input type="checkbox" name="outro" value="">Outro</label>
+										<label><input type="checkbox" name="outro"  id="outro_checkbox" value="">Outro</label>
 									</div>
 								</div>
 							</div>
@@ -98,13 +98,13 @@
 								<div class="col-md-6">
 									<input type="hidden" name="folga_hidden" id="folga_checkbox_hidden">
 									<div class="checkbox">
-										<label><input type="checkbox" name="folga" value="">Folga</label>
+										<label><input type="checkbox" name="folga"  id="folga_checkbox" value="">Folga</label>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<input type="hidden" name="falintegral_hidden" id="falintegral_checkbox_hidden">
 									<div class="checkbox">
-										<label><input type="checkbox" name="falta_ausencia_integral">Falta/Ausência integral</label>
+										<label><input type="checkbox"  name="falta_ausencia_integral"  id="falinte_checkbox" value="">Falta/Ausência integral</label>
 									</div>
 								</div>
 							</div>
@@ -121,7 +121,7 @@
 			</div>
 			<!-- FIM :: Motivo Checkbox-->
 			<!-- Motivo Por Escrito -->
-			<div class="panel panel-default" id="justificativa">
+			<div class="panel panel-default" id="motivo_escrito">
 				<div class="panel-heading">
 					<h3 class="panel-title"><b>Justificativa</b></h3>
 				</div>
