@@ -25,8 +25,8 @@ $(document).ready(function(){
 function beforeSendValidate(currentStage, nextStage){
     var msg = "";
     var ext_Permitidas = ['jpg', 'png', 'gif', 'pdf', 'txt', 'doc', 'docx'];
-
-    if(CURRENT_STATE === 1 || CURRENT_STATE === 0){
+    console.log("entrei no before" + nextStage);
+    if(CURRENT_STATE === 4 || CURRENT_STATE === 12){
         //validando inputs
         if($('input[name="colab_nome"]').val() == ""){
             msg += "É necessário preencher o campo nome.<br>";
@@ -68,7 +68,7 @@ function beforeSendValidate(currentStage, nextStage){
         if($('input[name="falta_ausencia_integral"]:checked').val() === 'falta_ausencia_integral'){
             $('input[name="falintegral_hidden"]').val('falta_ausencia_integral');
         }
-    } else if(CURRENTE_STATE === 5){
+    } else if(CURRENTE_STATE === 12){
         //valida a justificativa
         if(!($('input[name="aceito"]:checked').val())){
             msg += "Voce deve aceitar ou negar a justificativa";
@@ -81,10 +81,10 @@ function beforeSendValidate(currentStage, nextStage){
 };
 
 function escondeCampos(CURRENT_STATE){
-    if(CURRENT_STATE === 1 || CURRENT_STATE === 0){
+    if(CURRENT_STATE === 4 || CURRENT_STATE === 12){
         $('#justificativa').hide();
         $('#registro').hide();
-    } else if (CURRENT_STATE === 6){
+    } else if (CURRENT_STATE === 12){
         $('#registro').hide();
 
         $('.input_colab').attr('readonly', 'readonly');
@@ -122,7 +122,7 @@ function escondeCampos(CURRENT_STATE){
         if($('input[name="falta_ausencia_integral"]').val() === ""){
             $('input[name="falintegral_hidden"]').attr("checked", "checked");
         }
-    } else if(CURRENT_STATE === 8){
+    } else if(CURRENT_STATE === 10){
 
         //Marca os checkbox escolhidos
         if($('input[name="atraso"]').val() === ""){
