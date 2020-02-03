@@ -8,7 +8,7 @@ $(document).ready(function(){
     $("#colab_matricula").mask('000.000');
     $("#data_entrega_justificativa").mask('00/00/0000');
 
-    if(CURRENT_STATE === 7){
+    if(CURRENT_STATE === 19){
         $('input[name="aceito"]').on('change', function () {
             if ($(this).val() === 'sim') {
                 $('input[name="aceito_hidden"]').val('S');
@@ -25,7 +25,7 @@ $(document).ready(function(){
 function beforeSendValidate(currentStage, nextStage){
     var msg = "";
     var ext_Permitidas = ['jpg', 'png', 'gif', 'pdf', 'txt', 'doc', 'docx'];
-    console.log("entrei no before" + nextStage);
+    console.log("entrei no before" + currentStage);
     if(CURRENT_STATE === 4 || CURRENT_STATE === 12){
         //validando inputs
         if($('input[name="colab_nome"]').val() == ""){
@@ -68,7 +68,7 @@ function beforeSendValidate(currentStage, nextStage){
         if($('input[name="falta_ausencia_integral"]:checked').val() === 'falta_ausencia_integral'){
             $('input[name="falintegral_hidden"]').val('falta_ausencia_integral');
         }
-    } else if(CURRENTE_STATE === 12){
+    } else if(CURRENTE_STATE === 19){
         //valida a justificativa
         if(!($('input[name="aceito"]:checked').val())){
             msg += "Voce deve aceitar ou negar a justificativa";
@@ -81,7 +81,7 @@ function beforeSendValidate(currentStage, nextStage){
 };
 
 function escondeCampos(CURRENT_STATE){
-    if(CURRENT_STATE === 4 || CURRENT_STATE === 12){
+    if(CURRENT_STATE === 4){
         $('#justificativa').hide();
         $('#registro').hide();
     } else if (CURRENT_STATE === 12){
