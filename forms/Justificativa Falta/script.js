@@ -1,4 +1,4 @@
-$(document).ready(function (){
+$(document).ready(function(){
     if(CURRENT_STATE !== null){
         escondeCampos(CURRENT_STATE);
     } else {
@@ -8,7 +8,7 @@ $(document).ready(function (){
     $("#colab_matricula").mask('000.000');
     $("#data_entrega_justificativa").mask('00/00/0000');
 
-    if(CURRENTE_STATE === 2){
+    if(CURRENTE_STATE === 7){
         $('input[name="aceito"]').on('change', function () {
             if ($(this).val() === 'sim') {
                 $('input[name="aceito_hidden"]').val('S');
@@ -26,7 +26,7 @@ function beforeSendValidate(numState, nextState){
     var msg = "";
     var ext_Permitidas = ['jpg', 'png', 'gif', 'pdf', 'txt', 'doc', 'docx'];
 
-    if(CURRENT_STATE === 1 || CURRENT_STATE === 0){
+    if(CURRENT_STATE === 4 || CURRENT_STATE === 0){
         //validando inputs
         if($('input[name="colab_nome"]').val() == ""){
             msg += "É necessário preencher o campo nome.<br>";
