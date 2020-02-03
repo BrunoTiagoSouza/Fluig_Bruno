@@ -1711,6 +1711,68 @@
    </array>
   </void>
   <void method="put">
+   <string>camposFormulario, documentoId = 81</string>
+   <array class="java.lang.String" length="19">
+    <void index="0">
+     <string>aprovado</string>
+    </void>
+    <void index="1">
+     <string>aprovado_hidden</string>
+    </void>
+    <void index="2">
+     <string>emp_cnpj</string>
+    </void>
+    <void index="3">
+     <string>emp_cod</string>
+    </void>
+    <void index="4">
+     <string>emp_cpf</string>
+    </void>
+    <void index="5">
+     <string>emp_nome</string>
+    </void>
+    <void index="6">
+     <string>emp_razao</string>
+    </void>
+    <void index="7">
+     <string>emp_vt</string>
+    </void>
+    <void index="8">
+     <string>providenciado</string>
+    </void>
+    <void index="9">
+     <string>saldo</string>
+    </void>
+    <void index="10">
+     <string>va</string>
+    </void>
+    <void index="11">
+     <string>val_total</string>
+    </void>
+    <void index="12">
+     <string>val_va</string>
+    </void>
+    <void index="13">
+     <string>val_vr</string>
+    </void>
+    <void index="14">
+     <string>va_hidden</string>
+    </void>
+    <void index="15">
+     <string>vr</string>
+    </void>
+    <void index="16">
+     <string>vr_hidden</string>
+    </void>
+    <void index="17">
+     <string>vt</string>
+    </void>
+    <void index="18">
+     <string>vt_hidden</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
    <string>mecanismo</string>
    <array class="[Ljava.lang.Object;" length="9">
     <void index="0">
