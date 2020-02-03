@@ -173,4 +173,4 @@ function showAllDoc(){
     } else {
         $('#n_aceito').attr('checked', 'checked');
     }
-}
+};
