@@ -29,7 +29,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Justificativa Falta</processId>
-      <version>7</version>
+      <version>8</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>213</formId>
@@ -278,7 +278,7 @@
         <companyId>1</companyId>
         <processId>JustificativaFalta</processId>
         <expressionOrder>1</expressionOrder>
-        <version>7</version>
+        <version>8</version>
         <sequence>12</sequence>
       </conditionProcessStatePK>
       <condition></condition>
@@ -434,7 +434,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>JustificativaFalta</processId>
-        <version>7</version>
+        <version>8</version>
         <linkSequence>18</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -445,7 +445,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>JustificativaFalta</processId>
-        <version>7</version>
+        <version>8</version>
         <linkSequence>18</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
