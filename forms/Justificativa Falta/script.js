@@ -4,7 +4,7 @@ $(document).ready(function (){
     } else {
         showAllDoc();
     }
-
+    
     $("#colab_matricula").mask('000.000');
     $("#data_entrega_justificativa").mask('00/00/0000');
 
@@ -19,6 +19,8 @@ $(document).ready(function (){
     }
     
 });
+
+
 
 function beforeSendValidate(numState, nextState){
     var msg = "";
