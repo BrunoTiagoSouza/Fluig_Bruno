@@ -167,7 +167,7 @@ function showAllDoc(){
     }
 
     //checkbox aprovado
-    if(($('input[name="aceito_hidden"]').val() === 'S'){
+    if($('input[name="aceito_hidden"]').val() === 'S'){
         $('#aceito').attr('checked', 'checked');
     } else {
         $('#n_aceito').attr('checked', 'checked');
