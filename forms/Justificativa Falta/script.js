@@ -8,7 +8,7 @@ $(document).ready(function(){
     //$("#colab_matricula").mask('000.000');
     $("#data_entrega_justificativa").mask('00/00/0000');
     $('#colab_matricula').mask('000.000', {reverse: true});
-    
+
     if(CURRENT_STATE === 19){
         $('input[name="aceito"]').on('change', function () {
             if ($(this).val() === 'sim') {
@@ -94,7 +94,7 @@ function escondeCampos(CURRENT_STATE){
         $('#n_marca_checkbox').attr('disabled', 'disabled');
         $('#outro_checkbox').attr('disabled', 'disabled');
         $('#folga_checkbox').attr('disabled', 'disabled');
-        $('#faltinte_checkbox').attr('disabled', 'disabled');
+        $('#falinte_checkbox').attr('disabled', 'disabled');
         $('#enviar_arquivo').attr('disabled', 'disabled');
         
 
