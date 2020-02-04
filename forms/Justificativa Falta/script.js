@@ -7,7 +7,8 @@ $(document).ready(function(){
     
     //$("#colab_matricula").mask('000.000');
     $("#data_entrega_justificativa").mask('00/00/0000');
-
+    $('#colab_matricula').mask('000.000', {reverse: true});
+    
     if(CURRENT_STATE === 19){
         $('input[name="aceito"]').on('change', function () {
             if ($(this).val() === 'sim') {
@@ -28,7 +29,7 @@ function beforeSendValidate(currentStage, nextStage){
     
     if(CURRENT_STATE === 4 || CURRENT_STATE === 0){
         //validando inputs
-        //console.log("entrei no before" + currentStage);
+        
         if($('input[name="colab_nome"]').val() == ""){
             msg += "É necessário preencher o campo nome.<br>";
         }
