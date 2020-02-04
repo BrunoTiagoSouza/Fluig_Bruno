@@ -97,6 +97,7 @@ function escondeCampos(CURRENT_STATE){
         $('#enviar_arquivo').attr('disabled', 'disabled');
         
 
+
         //utilizando os checkbox guardados
         if($('input[name="atraso"]').val() === ""){
             $('input[name="atraso_hidden"]').attr("checked", "checked");
