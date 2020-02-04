@@ -28,7 +28,8 @@
 							<label for="colab_setor">Setor</label>
 							<!-- Select Setor -->
 							<select id="colab_setor" name="colab_setor" class="form-control input_colab">
-								<option>Lojistica</option>
+								<option disabled selected value> Selecione uma opção </option>
+								<option>Logistica</option>
 								<option>Usinagem</option>
 								<option>Planejamento</option>
 								<option>Financeiro</option>
@@ -145,6 +146,7 @@
 					<div class="row">
 						<!-- Data de entrega do Atestado & Assinatura -->
 						<div class="col-md-12">
+							<input type="hidden" name="data_entrega_hidden" id="data_entrega_checkbox_hidden">
 							<label for="data_entrega_justificativa">Data Entrega Justificativa: </label>
 							<input type="text" id="data_entrega_justificativa" name="data_entrega_justificativa">
 						</div>
