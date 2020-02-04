@@ -38,14 +38,11 @@ function beforeSendValidate(currentStage, nextStage){
         if($('input[name="colab_matricula"]').val() == ""){
             msg += "É necessário preencher o campo matricula.<br>";
         }
-        if(typeof ext_Permitidas.find(function(ext){
-            /**
-             * Validando o documento ou foto anexado
-             *  ...Falta testar...
-             */
+        /*if(typeof ext_Permitidas.find(function(ext){
+            
             return arquivo_enviado.val().split('.').pop() == ext; }) == 'undefined'){
             msg += "Arquivo invalido. verifique se o arquivo é jpg, png, gif, pdf, txt, doc, docx.<br>";
-        }
+        }*/
 
         //guarda a escolha dos checkbox 
         if($('input[name="atraso"]:checked').val() === 'atraso'){
