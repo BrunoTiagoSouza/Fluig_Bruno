@@ -1982,7 +1982,7 @@
     <fonts name="Arial" size="8"/>
     <fonts bold="true" name="Arial" size="8"/>
   </pi:Diagram>
-  <bpmn2:BpmnProcess author="" cardIndex="213" category="" complementsLevel="1" expedient="Default" extendedFields="&lt;list/&gt;" formSource="server" id="JustificativaFalta" instruction="" keyWord="" managerAssignmentController="&lt;org.eclipse.bpmn2.impl.AssignmentControllerColleague&gt;&#10;  &lt;colleagueId&gt;bruno.tiago&lt;/colleagueId&gt;&#10;  &lt;mechanismName&gt;Usu&#225;rio&lt;/mechanismName&gt;&#10;&lt;/org.eclipse.bpmn2.impl.AssignmentControllerColleague&gt;" name="Justificativa Falta" notifyRequisitionerComplements="true" notifyResponsibleComplements="true" serverId="real_world" version="8" volume="Default"/>
+  <bpmn2:BpmnProcess author="" cardIndex="213" category="" complementsLevel="1" expedient="Default" extendedFields="&lt;list/&gt;" formSource="server" id="JustificativaFalta" instruction="" keyWord="" managerAssignmentController="&lt;org.eclipse.bpmn2.impl.AssignmentControllerColleague&gt;&#10;  &lt;colleagueId&gt;bruno.tiago&lt;/colleagueId&gt;&#10;  &lt;mechanismName&gt;Usu&#225;rio&lt;/mechanismName&gt;&#10;&lt;/org.eclipse.bpmn2.impl.AssignmentControllerColleague&gt;" name="Justificativa Falta" notifyRequisitionerComplements="true" notifyResponsibleComplements="true" serverId="real_world" version="9" volume="Default"/>
   <bpmn2:BpmnPool cores="FFFFFF" id="pool1" name="justificativa_falta"/>
   <bpmn2:BpmnSwimLane cores="9F9F9F" id="swimlane2" name="Colaborador"/>
   <bpmn2:BpmnStartEvent esforcoCalculo="0" expediente="" id="startevent4" name="In&#237;cio" outgoing="flow20" selecionaColaboradores="1" signalId="0" type="10"/>
