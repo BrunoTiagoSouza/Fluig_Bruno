@@ -28,7 +28,7 @@ function beforeSendValidate(currentStage, nextStage){
     
     if(CURRENT_STATE === 4 || CURRENT_STATE === 0){
         //validando inputs
-        console.log("entrei no before" + currentStage);
+        //console.log("entrei no before" + currentStage);
         if($('input[name="colab_nome"]').val() == ""){
             msg += "É necessário preencher o campo nome.<br>";
         }
@@ -38,11 +38,11 @@ function beforeSendValidate(currentStage, nextStage){
         if($('input[name="colab_matricula"]').val() == ""){
             msg += "É necessário preencher o campo matricula.<br>";
         }
-        if(typeof ext_Permitidas.find(function(ext){
+        /*if(typeof ext_Permitidas.find(function(ext){
             
             return $('#arquivo_enviado').val().split('.').pop() == ext; }) == 'undefined'){
             msg += "Arquivo invalido. verifique se o arquivo é jpg, png, gif, pdf, txt, doc, docx.<br>";
-        }
+        }*/
 
         //guarda a escolha dos checkbox 
         if($('input[name="atraso"]:checked').val() === 'atraso'){
@@ -86,7 +86,7 @@ function escondeCampos(CURRENT_STATE){
         $('#registro').hide();
 
         $('.input_colab').attr('readonly', 'readonly');
-        $('#durante_checkbox').attr('disabled', 'disabled');
+        $('#atraso_checkbox').attr('disabled', 'disabled');
         $('#saidurante_checkbox').attr('disabled', 'disabled');
         $('#saiantes_checkbox').attr('disabled', 'disabled');
         $('#faltameio_checkbox').attr('disabled', 'disabled');
@@ -94,6 +94,8 @@ function escondeCampos(CURRENT_STATE){
         $('#outro_checkbox').attr('disabled', 'disabled');
         $('#folga_checkbox').attr('disabled', 'disabled');
         $('#faltinte_checkbox').attr('disabled', 'disabled');
+        $('#enviar_arquivo').attr('disabled', 'disabled');
+        
 
         //utilizando os checkbox guardados
         if($('input[name="atraso"]').val() === ""){
