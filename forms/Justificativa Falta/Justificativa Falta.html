@@ -17,15 +17,23 @@
 				</div>
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-md-12">
-							<label for="colab_nome">Nome</label>
+						<div class="col-md-4">
+							<label for="colab_nome">Nome do Colaborador: </label>
 							<!-- Input Nome -->
 							<input type="text" id="colab_nome" name="colab_nome" class="form-control input_colab">
 						</div>
+						<div class="col-md-3">
+							<label for="colab_cpf">CPF: </label>
+							<input type="text" id="colab_cpf" name="colab_cpf" class="form-control input_colab" autocomplete="off" >
+						</div>
+						<div class="col-md-2">
+							<label for="RG">RG: </label>
+							<input type="text" id="colab_rg" name="colab_rg" class="form-control input_colab">
+						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12">
-							<label for="colab_setor">Setor</label>
+						<div class="col-md-3">
+							<label for="colab_setor">Setor: </label>
 							<!-- Select Setor -->
 							<select id="colab_setor" name="colab_setor" class="form-control input_colab">
 								<option disabled selected value> Selecione uma opção </option>
@@ -35,10 +43,18 @@
 								<option>Financeiro</option>
 							</select>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<label for="colab_matricula">Matricula</label>
+						<div class="col-md-3">
+							<label for="colab_turno">Turno: </label>
+							<select id="colab_turno" name="colab_turno" class="form-control input_colab">
+								<option disabled selected value> Selecione uma opção</option>
+								<option>Primeiro (6:20 / 14:30)</option>
+								<option>Segundo (13:35 / 22:30)</option>
+								<option>Terceiro (22:00 / 6:30)</option>
+								<option>Comercial</option>
+							</select>
+						</div>
+						<div class="col-md-3">
+							<label for="colab_matricula">Matricula: </label>
 							<!-- Input Matricula -->
 							<input type="text" id="colab_matricula" name="colab_matricula" class="form-control input_colab" data-delimeter="," data-reverse>
 						</div>
@@ -49,7 +65,7 @@
 			<!-- Motivo Checkbox -->
 			<div class="panel panel-default" id="Motivo_checkbox">
 				<div class="panel-heading">
-					<h3 class="panel-title"><b>Motivo</b></h3>
+					<h3 class="panel-title"><b>Motivo Da Ausência</b></h3>
 				</div>
 				<div class="panel-body">
 					<div class="row">
@@ -57,57 +73,64 @@
 							<div class="row">
 								<div class="col-md-6">
 									<input type="hidden" name="atraso_hidden" id="atraso_checkbox_hidden">
-									<div class="checkbox">
+									<div class="custom-checkbox custom-checkbox-primary">
 										<input type="checkbox" name="atraso" id="atraso_checkbox" value="atraso">
-										<label>Atraso</label>
+										<label for="atraso_checkbox">Atraso</label>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<input type="hidden" name="saidurante_hidden" id="saidurante_checkbox_hidden">
-									<div class="checkbox">
-										<label><input type="checkbox" name="saida_durante_expediente" id="saidurante_checkbox" value="saida_durante_expediente">Saida durante expediente</label>
+									<div class="custom-checkbox custom-checkbox-primary">
+										<input type="checkbox" name="saida_durante_expediente" id="saidurante_checkbox" value="saida_durante_expediente">
+										<label for="saidurante_checkbox">Saida durante expediente</label>
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-6">
 									<input type="hidden" name="saiantes_hidden" id="saiantes_checkbox_hidden">
-									<div class="checkbox">	
-										<label><input type="checkbox" name="saida_antecipada" id="saiantes_checkbox" value="saida_antecipada">Antecipação do horario de saida</label>
+									<div class="custom-checkbox custom-checkbox-primary">	
+										<input type="checkbox" name="saida_antecipada" id="saiantes_checkbox" value="saida_antecipada">
+										<label for="saidurante_checkbox">Antecipação do horario de saida</label>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<input type="hidden" name="falmeio_hidden" id="falmeio_checkbox_hidden">
-									<div class="checkbox">
-										<label><input type="checkbox" name="falta_saida_meio_periodo"  id="faltameio_checkbox" value="falta_saida_meio_periodo">Falta/Saida meio periodo.</label>
+									<div class="custom-checkbox custom-checkbox-primary">
+										<input type="checkbox" name="falta_saida_meio_periodo"  id="faltameio_checkbox" value="falta_saida_meio_periodo">
+										<label for="faltameio_checkbox">Falta/Saida meio periodo.</label>
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-6">
 									<input type="hidden" name="ausencia_hidden" id="ausencia_checkbox_hidden">
-									<div class="checkbox">
-										<label><input type="checkbox" name="ausencia_marcacao_saida"  id="n_marca_checkbox" value="ausencia_marcacao_saida">Ausência de marcação de ponto</label>
+									<div class="custom-checkbox custom-checkbox-primary">
+										<input type="checkbox" name="ausencia_marcacao_saida"  id="n_marca_checkbox" value="ausencia_marcacao_saida">
+										<label for="n_marca_checkbox">Ausência de marcação de ponto</label>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<input type="hidden" name="outro_hidden" id="outro_checkbox_hidden">
-									<div class="checkbox">
-										<label><input type="checkbox" name="outro"  id="outro_checkbox" value="outro">Outro</label>
+									<div class="custom-checkbox custom-checkbox-primary">
+										<input type="checkbox" name="outro"  id="outro_checkbox" value="outro">
+										<label for="outro_checkbox">Outro</label>
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-6">
 									<input type="hidden" name="folga_hidden" id="folga_checkbox_hidden">
-									<div class="checkbox">
-										<label><input type="checkbox" name="folga"  id="folga_checkbox" value="folga">Folga</label>
+									<div class="custom-checkbox custom-checkbox-primary">
+										<input type="checkbox" name="folga"  id="folga_checkbox" value="folga">
+										<label>Folga</label>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<input type="hidden" name="falintegral_hidden" id="falintegral_checkbox_hidden">
-									<div class="checkbox">
-										<label><input type="checkbox"  name="falta_ausencia_integral"  id="falinte_checkbox" value="falta_ausencia_integral">Falta/Ausência integral</label>
+									<div class="custom-checkbox custom-checkbox-primary">
+										<input type="checkbox"  name="falta_ausencia_integral"  id="falinte_checkbox" value="falta_ausencia_integral">
+										<label>Falta/Ausência integral</label>
 									</div>
 								</div>
 							</div>
@@ -116,7 +139,8 @@
 					<div class="row">
 						<!-- Anexo Foto/Atestado -->
 						<div class="col-md-12">
-							<label for="enviar_arquivo">Escolher arquivo<input type="file" id="enviar_arquivo" name="enviar_arquivo"></label>
+							<label for="enviar_arquivo">Escolher arquivo</label>
+							<input type="file" id="enviar_arquivo" name="enviar_arquivo">
 							<p class="help-block">Selecione uma foto do atestado, declaracao de comparecimento ou documento de justificativa.</p>
 						</div>
 					</div>
@@ -185,13 +209,6 @@
 			<div class="panel panel-default" id="registro">
 				<div class="panel-heading">
 					<h3 class="panel-title">Registro Ponto Alterado Com Sucesso!</h3>
-				</div>
-				<div class="panel-body">
-					<div class="row" id="modificacoes">
-						<div class="col-md-12">
-						<label>Aprovado</label>
-						</div>
-					</div>
 				</div>
 			</div>
 			<!-- FIM :: Registro Ponto Alterado -->
