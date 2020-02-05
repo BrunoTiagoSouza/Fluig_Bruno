@@ -2,16 +2,15 @@
   <ProcessDefinition>
     <processDefinitionPK>
       <companyId>1</companyId>
-      <processId>JustificativaFalta</processId>
+      <processId>Solicitação VA VR VT</processId>
     </processDefinitionPK>
-    <processDescription>Justificativa Falta</processDescription>
+    <processDescription>Solicitação VA VT VR</processDescription>
     <instruction></instruction>
     <active>true</active>
     <publicProcess>false</publicProcess>
     <volumeId>Default</volumeId>
-    <categoryId></categoryId>
+    <categoryId>Formulários RH</categoryId>
     <managerEngineAllocationId></managerEngineAllocationId>
-    <managerEngineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;bruno.tiago&lt;/User&gt;&lt;/AssignmentController&gt;</managerEngineAllocationConfiguration>
     <snapshotFrequency>0</snapshotFrequency>
     <baseDay>0</baseDay>
     <baseMonth>0</baseMonth>
@@ -28,11 +27,11 @@
   <ProcessDefinitionVersion>
     <processDefinitionVersionPK>
       <companyId>1</companyId>
-      <processId>Justificativa Falta</processId>
-      <version>9</version>
+      <processId>Solicitação VA VT VR</processId>
+      <version>3</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
-    <formId>213</formId>
+    <formId>81</formId>
     <editionMode>true</editionMode>
     <updateAttachmentsVersion>false</updateAttachmentsVersion>
     <controlsAttachmentsSecurity>false</controlsAttachmentsSecurity>
@@ -40,7 +39,7 @@
     <blockedVersion>false</blockedVersion>
     <counterSign>false</counterSign>
     <openInstances>0</openInstances>
-    <bpmnVersion>2</bpmnVersion>
+    <bpmnVersion>1</bpmnVersion>
     <processStates/>
     <favorito>false</favorito>
     <inheritFormSecurity>false</inheritFormSecurity>
@@ -50,9 +49,9 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
+        <processId>Solicitação VA VR VT</processId>
         <version>1</version>
-        <sequence>4</sequence>
+        <sequence>1</sequence>
       </processStatePK>
       <stateName>Início</stateName>
       <stateDescription>Início</stateDescription>
@@ -76,8 +75,8 @@
       <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>140</positionX>
-      <positionY>160</positionY>
+      <positionX>120</positionX>
+      <positionY>130</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -100,18 +99,17 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
+        <processId>Solicitação VA VR VT</processId>
         <version>1</version>
-        <sequence>14</sequence>
+        <sequence>2</sequence>
       </processStatePK>
-      <stateName>Alterar Registro Ponto</stateName>
-      <stateDescription>Alterar Registro Ponto</stateDescription>
+      <stateName>Analise RH</stateName>
+      <stateDescription>Analise RH</stateDescription>
       <instruction></instruction>
       <deadlineTime>0</deadlineTime>
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId></engineAllocationId>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -126,8 +124,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>600</positionX>
-      <positionY>225</positionY>
+      <positionX>250</positionX>
+      <positionY>120</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -151,18 +149,17 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
+        <processId>Solicitação VA VR VT</processId>
         <version>1</version>
-        <sequence>19</sequence>
+        <sequence>8</sequence>
       </processStatePK>
-      <stateName>Análise RH</stateName>
-      <stateDescription>Análise RH</stateDescription>
+      <stateName>Providencia Solicitaçao</stateName>
+      <stateDescription>Providencia Solicitaçao</stateDescription>
       <instruction></instruction>
       <deadlineTime>0</deadlineTime>
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId></engineAllocationId>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -177,8 +174,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>189</positionX>
-      <positionY>272</positionY>
+      <positionX>580</positionX>
+      <positionY>112</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -202,20 +199,20 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
+        <processId>Solicitação VA VR VT</processId>
         <version>1</version>
-        <sequence>12</sequence>
+        <sequence>4</sequence>
       </processStatePK>
-      <stateName>Exclusivo</stateName>
-      <stateDescription>Exclusivo</stateDescription>
+      <stateName>Aprovado</stateName>
+      <stateDescription>Aprovado</stateDescription>
       <joint>false</joint>
       <initialState>false</initialState>
       <transferAttachments>false</transferAttachments>
       <subProcessId></subProcessId>
       <formFolder>0</formFolder>
       <automatic>true</automatic>
-      <positionX>460</positionX>
-      <positionY>240</positionY>
+      <positionX>410</positionX>
+      <positionY>90</positionY>
       <inhibitTransfer>false</inhibitTransfer>
       <stateType>1</stateType>
       <bpmnType>120</bpmnType>
@@ -227,9 +224,9 @@
     <ProcessState>
       <processStatePK>
         <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
+        <processId>Solicitação VA VR VT</processId>
         <version>1</version>
-        <sequence>16</sequence>
+        <sequence>6</sequence>
       </processStatePK>
       <stateName>Fim</stateName>
       <stateDescription>Fim</stateDescription>
@@ -253,8 +250,55 @@
       <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>800</positionX>
-      <positionY>240</positionY>
+      <positionX>420</positionX>
+      <positionY>260</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>60</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>Solicitação VA VR VT</processId>
+        <version>1</version>
+        <sequence>10</sequence>
+      </processStatePK>
+      <stateName>Fim</stateName>
+      <stateDescription>Fim</stateDescription>
+      <instruction>Atividade final do processo</instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>0</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>1</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>760</positionX>
+      <positionY>130</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -276,26 +320,25 @@
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
+        <processId>Solicitação VA VR VT</processId>
         <expressionOrder>1</expressionOrder>
-        <version>9</version>
-        <sequence>12</sequence>
+        <version>3</version>
+        <sequence>4</sequence>
       </conditionProcessStatePK>
-      <condition></condition>
-      <destinationSequenceId>14</destinationSequenceId>
-      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;bruno.tiago&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <condition>false</condition>
+      <destinationSequenceId>8</destinationSequenceId>
       <conditionType>1</conditionType>
     </ConditionProcessState>
     <ConditionProcessState>
       <conditionProcessStatePK>
         <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
+        <processId>Solicitação VA VR VT</processId>
         <expressionOrder>2</expressionOrder>
-        <version>9</version>
-        <sequence>12</sequence>
+        <version>3</version>
+        <sequence>4</sequence>
       </conditionProcessStatePK>
-      <condition></condition>
-      <destinationSequenceId>16</destinationSequenceId>
+      <condition>false</condition>
+      <destinationSequenceId>6</destinationSequenceId>
       <conditionType>1</conditionType>
     </ConditionProcessState>
   </list>
@@ -303,31 +346,14 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
+        <processId>Solicitação VA VR VT</processId>
         <version>1</version>
-        <linkSequence>15</linkSequence>
+        <linkSequence>3</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
       <returnPermited>false</returnPermited>
-      <initialStateSequence>12</initialStateSequence>
-      <finalStateSequence>14</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name>Aceito</name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>false</defaultLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
-        <version>1</version>
-        <linkSequence>17</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>14</initialStateSequence>
-      <finalStateSequence>16</finalStateSequence>
+      <initialStateSequence>1</initialStateSequence>
+      <finalStateSequence>2</finalStateSequence>
       <returnLabel></returnLabel>
       <name></name>
       <automaticLink>false</automaticLink>
@@ -337,16 +363,16 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
+        <processId>Solicitação VA VR VT</processId>
         <version>1</version>
-        <linkSequence>18</linkSequence>
+        <linkSequence>5</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
       <returnPermited>false</returnPermited>
-      <initialStateSequence>12</initialStateSequence>
-      <finalStateSequence>16</finalStateSequence>
+      <initialStateSequence>2</initialStateSequence>
+      <finalStateSequence>4</finalStateSequence>
       <returnLabel></returnLabel>
-      <name>Negado</name>
+      <name></name>
       <automaticLink>false</automaticLink>
       <defaultLink>false</defaultLink>
       <type>0</type>
@@ -354,14 +380,14 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
+        <processId>Solicitação VA VR VT</processId>
         <version>1</version>
-        <linkSequence>20</linkSequence>
+        <linkSequence>7</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
       <returnPermited>false</returnPermited>
       <initialStateSequence>4</initialStateSequence>
-      <finalStateSequence>19</finalStateSequence>
+      <finalStateSequence>6</finalStateSequence>
       <returnLabel></returnLabel>
       <name></name>
       <automaticLink>false</automaticLink>
@@ -371,14 +397,31 @@
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
+        <processId>Solicitação VA VR VT</processId>
         <version>1</version>
-        <linkSequence>21</linkSequence>
+        <linkSequence>9</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
       <returnPermited>false</returnPermited>
-      <initialStateSequence>19</initialStateSequence>
-      <finalStateSequence>12</finalStateSequence>
+      <initialStateSequence>4</initialStateSequence>
+      <finalStateSequence>8</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>Solicitação VA VR VT</processId>
+        <version>1</version>
+        <linkSequence>11</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>8</initialStateSequence>
+      <finalStateSequence>10</finalStateSequence>
       <returnLabel></returnLabel>
       <name></name>
       <automaticLink>false</automaticLink>
@@ -392,79 +435,24 @@
   <list>
     <SwimLane>
       <color>FFFFFF</color>
-      <height>290</height>
-      <width>831</width>
-      <positionX>70</positionX>
-      <positionY>77</positionY>
-      <stateName>justificativa_falta</stateName>
-      <type>1</type>
+      <height>271</height>
+      <width>761</width>
+      <positionX>50</positionX>
+      <positionY>50</positionY>
+      <stateName></stateName>
+      <type>2</type>
       <parentSequence>0</parentSequence>
       <swimLanePK>
         <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
+        <processId>Solicitação VA VR VT</processId>
         <version>1</version>
         <sequence>1</sequence>
       </swimLanePK>
     </SwimLane>
-    <SwimLane>
-      <color>9F9F9F</color>
-      <height>145</height>
-      <width>801</width>
-      <positionX>100</positionX>
-      <positionY>77</positionY>
-      <stateName>Colaborador</stateName>
-      <type>2</type>
-      <parentSequence>1</parentSequence>
-      <swimLanePK>
-        <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
-        <version>1</version>
-        <sequence>2</sequence>
-      </swimLanePK>
-    </SwimLane>
-    <SwimLane>
-      <color>82b0b7</color>
-      <height>145</height>
-      <width>801</width>
-      <positionX>100</positionX>
-      <positionY>222</positionY>
-      <stateName>RH</stateName>
-      <type>2</type>
-      <parentSequence>1</parentSequence>
-      <swimLanePK>
-        <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
-        <version>1</version>
-        <sequence>3</sequence>
-      </swimLanePK>
-    </SwimLane>
   </list>
   <list/>
   <list/>
-  <list>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
-        <version>9</version>
-        <linkSequence>18</linkSequence>
-        <bendSequence>1</bendSequence>
-      </processLinkBendPK>
-      <positionX>584</positionX>
-      <positionY>340</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>JustificativaFalta</processId>
-        <version>9</version>
-        <linkSequence>18</linkSequence>
-        <bendSequence>2</bendSequence>
-      </processLinkBendPK>
-      <positionX>816</positionX>
-      <positionY>340</positionY>
-    </ProcessLinkBend>
-  </list>
+  <list/>
   <list/>
   <list/>
   <list/>
@@ -474,19 +462,19 @@
   <list/>
   <list>
     <ConditionProcessAutomaticRules>
-      <sequence>12</sequence>
+      <sequence>4</sequence>
       <expressionOrder>1</expressionOrder>
       <ruleOrder>1</ruleOrder>
-      <field>aceito</field>
+      <field>aprovado</field>
       <value>sim</value>
       <operator>1</operator>
       <valueType>1</valueType>
     </ConditionProcessAutomaticRules>
     <ConditionProcessAutomaticRules>
-      <sequence>12</sequence>
+      <sequence>4</sequence>
       <expressionOrder>2</expressionOrder>
       <ruleOrder>1</ruleOrder>
-      <field>n_aceito</field>
+      <field>aprovado</field>
       <value>nao</value>
       <operator>1</operator>
       <valueType>1</valueType>

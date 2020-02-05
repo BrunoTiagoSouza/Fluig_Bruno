@@ -29,7 +29,7 @@ function beforeSendValidate(currentStage, nextStage){
     
     if(CURRENT_STATE === 4 || CURRENT_STATE === 0){
         //validando inputs
-        
+        console.log("erro"+currentStage);
         if($('input[name="colab_nome"]').val() == ""){
             msg += "É necessário preencher o campo nome.<br>";
         }
@@ -45,30 +45,36 @@ function beforeSendValidate(currentStage, nextStage){
             msg += "Arquivo invalido. verifique se o arquivo é jpg, png, gif, pdf, txt, doc, docx.<br>";
         }*/
 
+        if(!$('input[name="atraso"]:checked').val() && !$('input[name="saida_durante_expediente"]:checked').val() && !$('input[name="saida_antecipada"]:checked').val() && !$('input[name="falta_saida_meio_periodo"]:checked').val() && !$('input[name="ausencia_marcacao_saida"]:checked').val() && !$('input[name="outro"]:checked').val() && !$('input[name="folga"]:checked').val() && !$('input[name="falta_ausencia_integral"]:checked').val() && !$('input[name="data_entrega_justificativa"]').val()){
+            msg += "Você deve selecionar um motivo.<br>";
+        }
         //guarda a escolha dos checkbox 
         if($('input[name="atraso"]:checked').val() === 'atraso'){
-            $('input[name="atraso_checkbox_hidden"]').val('atraso');
+            $('input[name="atraso_hidden"]').val('atraso');
         }
         if($('input[name="saida_durante_expediente"]:checked').val() === 'saida_durante_expediente'){
-            $('input[name="saidurante_checkbox_hidden"]').val('saida_durante_expediente');
+            $('input[name="saidurante_hidden"]').val('saida_durante_expediente');
         }
         if($('input[name="saida_antecipada"]:checked').val() === 'saida_antecipada'){
-            $('input[name="saiantes_checkbox_hidden"]').val('saida_antecipada');
+            $('input[name="saiantes_hidden"]').val('saida_antecipada');
         }
         if($('input[name="falta_saida_meio_periodo"]:checked').val() === 'falta_saida_meio_periodo'){
-            $('input[name="falmeio_checkbox_hidden"]').val('falta_saida_meio_periodo');
+            $('input[name="falmeio_hidden"]').val('falta_saida_meio_periodo');
         }
         if($('input[name="ausencia_marcacao_saida"]:checked').val() === 'ausencia_marcacao_saida'){
-            $('input[name="outro_checkbox_hidden"]').val('ausencia_marcacao_saida');
+            $('input[name="ausencia_hidden"]').val('ausencia_marcacao_saida');
+        }
+        if($('input[name="outro"]:checked').val() === 'outro'){
+            $('input[name="outro_hidden"]').val('outro');
         }
         if($('input[name="folga"]:checked').val() === 'folga'){
-            $('input[name="folga_checkbox_hidden"]').val('folga');
+            $('input[name="folga_hidden"]').val('folga');
         }
         if($('input[name="falta_ausencia_integral"]:checked').val() === 'falta_ausencia_integral'){
-            $('input[name="falintegral_checkbox_hidden"]').val('falta_ausencia_integral');
+            $('input[name="falintegral_hidden"]').val('falta_ausencia_integral');
         }
         if($('input[name="data_entrega_justificativa"]').val() === 'data_entrega_justificativa'){
-            $('input[name="data_entrega_checkbox_hidden"]').val('data_entrega_justificativa');
+            $('input[name="data_entrega_hidden"]').val('data_entrega_justificativa');
         }
     } else if(CURRENTE_STATE === 19){
         //valida a justificativa
@@ -100,62 +106,39 @@ function escondeCampos(CURRENT_STATE){
         $('#folga_checkbox').attr('disabled', 'disabled');
         $('#falinte_checkbox').attr('disabled', 'disabled');
         $('#enviar_arquivo').attr('disabled', 'disabled');
+        $('#data_entrega_justificativa').attr('disabled','disabled');
         
 
 
         //utilizando os checkbox guardados
-        if($('input[name="atraso_checkbox_hidden"]').val() !== ""){
+        if($('input[name="atraso_hidden"]').val() !== ""){
             $('input[name="atraso"]').attr("checked", "checked");
         }
-        if($('input[name="saida_durante_expediente_checkbox_hidden"]').val() !== ""){
+        if($('input[name="saidurante_hidden"]').val() !== ""){
             $('input[name="saida_durante_expediente"]').attr("checked", "checked");
         }
-        if($('input[name="saida_antecipada_checkbox_hidden"]').val() !== ""){
+        if($('input[name="saiantes_hidden"]').val() !== ""){
             $('input[name="saida_antecipada"]').attr("checked", "checked");
         }
-        if($('input[name="falta_saida_meio_periodo_checkbox_hidden"]').val() !== ""){
+        if($('input[name="falmeio_hidden"]').val() !== ""){
             $('input[name="falta_saida_meio_periodo"]').attr("checked", "checked");
         }
-        if($('input[name="ausencia_checkbox_hidden"]').val() !== ""){
+        if($('input[name="ausencia_hidden"]').val() !== ""){
             $('input[name="ausencia_marcacao_saida"]').attr("checked", "checked");
         }
-        if($('input[name="outro_checkbox"]').val() !== ""){
+        if($('input[name="outro_hidden"]').val() !== ""){
             $('input[name="outro"]').attr("checked", "checked");
         }
-        if($('input[name="folga_checkbox"]').val() !== ""){
+        if($('input[name="folga_hidden"]').val() !== ""){
             $('input[name="folga"]').attr("checked", "checked");
         }
-        if($('input[name="falinte_checkbox"]').val() !== ""){
+        if($('input[name="falintegral_hidden"]').val() !== ""){
             $('input[name="falta_ausencia_integral"]').attr("checked", "checked");
         }
-    } /*else if(CURRENT_STATE === 19){
-
-        //Marca os checkbox escolhidos
-        if($('input[name="atraso"]').val() === ""){
-            $('input[name="atraso_checkbox_hidden"]').attr("checked", "checked");
+        if($('input[name="data_justificativa_hidden"]').val() !== ""){
+            $('input[name="data_justificativa"]').val('data_justificativa');
         }
-        if($('input[name="saida_durante_expediente"]').val() === ""){
-            $('input[name="saidurante_checkbox_hidden"]').attr("checked", "checked");
-        }
-        if($('input[name="saida_antecipada"]').val() === ""){
-            $('input[name="saiantes_checkbox_hidden"]').attr("checked", "checked");
-        }
-        if($('input[name="falta_saida_meio_periodo"]').val() === ""){
-            $('input[name="falmeio_checkbox_hidden"]').attr("checked", "checked");
-        }
-        if($('input[name="ausencia_marcacao_saida"]').val() === ""){
-            $('input[name="ausencia_checkbox_hidden"]').attr("checked", "checked");
-        }
-        if($('input[name="outro"]').val() === ""){
-            $('input[name="outro_checkbox_hidden"]').attr("checked", "checked");
-        }
-        if($('input[name="folga"]').val() === ""){
-            $('input[name="folga_checkbox_hidden"]').attr("checked", "checked");
-        }
-        if($('input[name="falta_ausencia_integral"]').val() === ""){
-            $('input[name="falintegral_checkbox_hidden"]').attr("checked", "checked");
-        }
-    }*/
+    } 
 };
 
 function showAllDoc(){
