@@ -9,7 +9,7 @@ $(document).ready(function(){
     $('#colab_matricula').mask('000.000', {reverse: true});
 
     if(CURRENT_STATE === 19){
-        console.log($('input[name="aceito_hidden"]').val());
+        
         $('input[name="aceito"]').on('change', function () {
             if ($(this).val() === 'sim') {
                 $('input[name="aceito_hidden"]').val('S');
@@ -18,7 +18,6 @@ $(document).ready(function(){
             }
         });
     }
-    
 });
 
 
@@ -29,7 +28,7 @@ function beforeSendValidate(currentStage, nextStage){
     
     if(CURRENT_STATE === 4 || CURRENT_STATE === 0){
         //validando inputs
-        console.log("erro"+currentStage);
+        
         if($('input[name="colab_nome"]').val() == ""){
             msg += "É necessário preencher o campo nome.<br>";
         }
@@ -95,7 +94,7 @@ function escondeCampos(CURRENT_STATE){
         $('#registro').hide();
     } else if (CURRENT_STATE === 19){
         $('#registro').hide();
-        console.log(' 2 estado');
+        
 
         $('.input_colab').attr('readonly', 'readonly');
         $('#atraso_checkbox').attr('disabled', 'disabled');
