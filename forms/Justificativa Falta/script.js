@@ -8,12 +8,9 @@ $(document).ready(function(){
     
     $("#data_entrega_justificativa").mask('00/00/0000');
     $('#colab_matricula').mask('000.000', {reverse: true});
-
+    var mySimpleCalendar = FLUIGC.calendar('#data_entrega_justificativa');
+    
     if(CURRENT_STATE === 19){
-<<<<<<< HEAD
-        
-=======
->>>>>>> parent of 3143f51... fixed this motherfucker
         $('input[name="aceito"]').on('change', function () {
             if ($(this).val() === 'sim') {
                 $('input[name="aceito_hidden"]').val('S');
@@ -79,7 +76,7 @@ function beforeSendValidate(currentStage, nextStage){
         if($('input[name="data_entrega_justificativa"]').val() === 'data_entrega_justificativa'){
             $('input[name="data_entrega_hidden"]').val('data_entrega_justificativa');
         }
-    } else if(CURRENTE_STATE === 19){
+    } else if(CURRENT_STATE === 19){
         //valida a justificativa
         console.log("if do estado " + currentStage);
         if(!$('input[name="aceito"]:checked').val()){
@@ -98,10 +95,6 @@ function escondeCampos(CURRENT_STATE){
         $('#registro').hide();
     } else if (CURRENT_STATE === 19){
         $('#registro').hide();
-<<<<<<< HEAD
-        
-=======
->>>>>>> parent of 3143f51... fixed this motherfucker
 
         $('.input_colab').attr('readonly', 'readonly');
         $('#atraso_checkbox').attr('disabled', 'disabled');
