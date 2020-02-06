@@ -6,10 +6,10 @@ $(document).ready(function(){
     }
     
     
-    $("#data_entrega_justificativa").mask('00/00/0000');
+    //$("#data_entrega_justificativa").mask('00/00/0000');
     $('#colab_matricula').mask('000.000', {reverse: true});
     var mySimpleCalendar = FLUIGC.calendar('#data_entrega_justificativa');
-    
+
     if(CURRENT_STATE === 19){
         $('input[name="aceito"]').on('change', function () {
             if ($(this).val() === 'sim') {
@@ -45,9 +45,11 @@ function beforeSendValidate(currentStage, nextStage){
             msg += "Arquivo invalido. verifique se o arquivo é jpg, png, gif, pdf, txt, doc, docx.<br>";
         }*/
 
+        //Vlido checkbox
         if(!$('input[name="atraso"]:checked').val() && !$('input[name="saida_durante_expediente"]:checked').val() && !$('input[name="saida_antecipada"]:checked').val() && !$('input[name="falta_saida_meio_periodo"]:checked').val() && !$('input[name="ausencia_marcacao_saida"]:checked').val() && !$('input[name="outro"]:checked').val() && !$('input[name="folga"]:checked').val() && !$('input[name="falta_ausencia_integral"]:checked').val() && !$('input[name="data_entrega_justificativa"]').val()){
             msg += "Você deve selecionar um motivo.<br>";
         }
+
         //guarda a escolha dos checkbox 
         if($('input[name="atraso"]:checked').val() === 'atraso'){
             $('input[name="atraso_hidden"]').val('atraso');
