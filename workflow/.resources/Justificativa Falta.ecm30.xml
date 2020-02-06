@@ -215,7 +215,7 @@
       <formFolder>0</formFolder>
       <automatic>true</automatic>
       <positionX>460</positionX>
-      <positionY>245</positionY>
+      <positionY>240</positionY>
       <inhibitTransfer>false</inhibitTransfer>
       <stateType>1</stateType>
       <bpmnType>120</bpmnType>
@@ -470,58 +470,7 @@
   <list/>
   <list/>
   <list/>
-  <list>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>JustificativaFalta</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>19</stateSequence>
-      <appKey>approval</appKey>
-      <appField>title</appField>
-      <description></description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>JustificativaFalta</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>19</stateSequence>
-      <appKey>approval</appKey>
-      <appField>description</appField>
-      <description></description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>JustificativaFalta</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>19</stateSequence>
-      <appKey>approval</appKey>
-      <appField>highlight</appField>
-      <description></description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>JustificativaFalta</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>19</stateSequence>
-      <appKey>approval</appKey>
-      <appField>approve</appField>
-      <description></description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>JustificativaFalta</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>19</stateSequence>
-      <appKey>approval</appKey>
-      <appField>reject</appField>
-      <description></description>
-    </ProcessAppConfiguration>
-  </list>
+  <list/>
   <list/>
   <list>
     <ConditionProcessAutomaticRules>
@@ -537,7 +486,7 @@
       <sequence>12</sequence>
       <expressionOrder>2</expressionOrder>
       <ruleOrder>1</ruleOrder>
-      <field>aceito</field>
+      <field>n_aceito</field>
       <value>nao</value>
       <operator>1</operator>
       <valueType>1</valueType>

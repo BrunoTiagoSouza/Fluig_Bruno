@@ -5,11 +5,15 @@ $(document).ready(function(){
         showAllDoc();
     }
     
+    
     $("#data_entrega_justificativa").mask('00/00/0000');
     $('#colab_matricula').mask('000.000', {reverse: true});
 
     if(CURRENT_STATE === 19){
+<<<<<<< HEAD
         
+=======
+>>>>>>> parent of 3143f51... fixed this motherfucker
         $('input[name="aceito"]').on('change', function () {
             if ($(this).val() === 'sim') {
                 $('input[name="aceito_hidden"]').val('S');
@@ -24,7 +28,7 @@ $(document).ready(function(){
 
 function beforeSendValidate(currentStage, nextStage){
     var msg = "";
-    //var ext_Permitidas = ['jpg', 'png', 'gif', 'pdf', 'txt', 'doc', 'docx'];
+    var ext_Permitidas = ['jpg', 'png', 'gif', 'pdf', 'txt', 'doc', 'docx'];
     
     if(CURRENT_STATE === 4 || CURRENT_STATE === 0){
         //validando inputs
@@ -75,18 +79,18 @@ function beforeSendValidate(currentStage, nextStage){
         if($('input[name="data_entrega_justificativa"]').val() === 'data_entrega_justificativa'){
             $('input[name="data_entrega_hidden"]').val('data_entrega_justificativa');
         }
-    } else if(CURRENT_STATE === 19){
+    } else if(CURRENTE_STATE === 19){
         //valida a justificativa
         console.log("if do estado " + currentStage);
-        /*if(!$('input[name="aceito"]:checked').val()){
+        if(!$('input[name="aceito"]:checked').val()){
             msg += "Voce deve aceitar ou negar a justificativa";
-        } */
+        } 
     }
     if(msg !== ''){
         throw(msg);
     }
 
-}
+};
 
 function escondeCampos(CURRENT_STATE){
     if(CURRENT_STATE === 4|| CURRENT_STATE === 0){
@@ -94,7 +98,10 @@ function escondeCampos(CURRENT_STATE){
         $('#registro').hide();
     } else if (CURRENT_STATE === 19){
         $('#registro').hide();
+<<<<<<< HEAD
         
+=======
+>>>>>>> parent of 3143f51... fixed this motherfucker
 
         $('.input_colab').attr('readonly', 'readonly');
         $('#atraso_checkbox').attr('disabled', 'disabled');
@@ -139,7 +146,7 @@ function escondeCampos(CURRENT_STATE){
             $('input[name="data_justificativa"]').val('data_justificativa');
         }
     } 
-}
+};
 
 function showAllDoc(){
     if($('input[name="atraso_hidden"]').val() !== ""){
@@ -160,8 +167,8 @@ function showAllDoc(){
 
     //checkbox aprovado
     if($('input[name="aceito_hidden"]').val() === 'S'){
-        $('#s_aceito').attr('checked', 'checked');
+        $('#aceito').attr('checked', 'checked');
     } else {
         $('#n_aceito').attr('checked', 'checked');
     }
-}
+};
