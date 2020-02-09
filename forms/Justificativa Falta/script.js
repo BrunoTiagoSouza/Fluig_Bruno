@@ -25,11 +25,9 @@ $(document).ready(function(){
 
 function beforeSendValidate(currentStage, nextStage){
     var msg = "";
-    //var ext_Permitidas = ['jpg', 'png', 'gif', 'pdf', 'txt', 'doc', 'docx'];
     
     if(CURRENT_STATE === 4 || CURRENT_STATE === 0){
         //validando inputs
-        
         if($('input[name="colab_nome"]').val() == ""){
             msg += "É necessário preencher o campo nome.<br>";
         }
@@ -39,13 +37,8 @@ function beforeSendValidate(currentStage, nextStage){
         if($('input[name="colab_matricula"]').val() == ""){
             msg += "É necessário preencher o campo matricula.<br>";
         }
-        /*if(typeof ext_Permitidas.find(function(ext){
-            
-            return $('#arquivo_enviado').val().split('.').pop() == ext; }) == 'undefined'){
-            msg += "Arquivo invalido. verifique se o arquivo é jpg, png, gif, pdf, txt, doc, docx.<br>";
-        }*/
 
-        //Vlido checkbox
+        //Validandoo checkboxes
         if(!$('input[name="atraso"]:checked').val() && !$('input[name="saida_durante_expediente"]:checked').val() && !$('input[name="saida_antecipada"]:checked').val() && !$('input[name="falta_saida_meio_periodo"]:checked').val() && !$('input[name="ausencia_marcacao_saida"]:checked').val() && !$('input[name="outro"]:checked').val() && !$('input[name="folga"]:checked').val() && !$('input[name="falta_ausencia_integral"]:checked').val() && !$('input[name="data_entrega_justificativa"]').val()){
             msg += "Você deve selecionar um motivo.<br>";
         }
