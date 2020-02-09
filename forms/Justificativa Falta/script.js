@@ -25,7 +25,7 @@ $(document).ready(function(){
 
 function beforeSendValidate(currentStage, nextStage){
     var msg = "";
-    var ext_Permitidas = ['jpg', 'png', 'gif', 'pdf', 'txt', 'doc', 'docx'];
+    //var ext_Permitidas = ['jpg', 'png', 'gif', 'pdf', 'txt', 'doc', 'docx'];
     
     if(CURRENT_STATE === 4 || CURRENT_STATE === 0){
         //validando inputs

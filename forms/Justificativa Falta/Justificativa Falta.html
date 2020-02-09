@@ -36,7 +36,7 @@
 							<label for="colab_setor">Setor: </label>
 							<!-- Select Setor -->
 							<select id="colab_setor" name="colab_setor" class="form-control input_colab">
-								<option disabled selected value> Selecione uma opção </option>
+								<option disabled selected value=""> Selecione uma opção </option>
 								<option>Logistica</option>
 								<option>Usinagem</option>
 								<option>Planejamento</option>
@@ -75,63 +75,57 @@
 							<div class="row">
 								<div class="col-md-6">
 									<input type="hidden" name="atraso_hidden" id="atraso_checkbox_hidden">
-									<div class="custom-checkbox custom-checkbox-primary">
-									
-										<input type="checkbox" name="atraso" id="atraso_checkbox" value="atraso">
-										<label for="atraso">Atraso</label>
+									<div class="checkbox">
+										
+										<label><input type="checkbox" name="atraso" id="atraso_checkbox" value="atraso">Atraso</label>
 									</div>
+								</div>
+								<div class="col-md-6">
 									<input type="hidden" name="saidurante_hidden" id="saidurante_checkbox_hidden">
-									<div class="custom-checkbox custom-checkbox-primary">
-									
-										<input type="checkbox" name="saida_durante_expediente" id="saidurante_checkbox" value="saida_durante_expediente">
-										<label for="saida_durante_expediente">Saida durante expediente</label>
+									<div class="checkbox">
+										<label><input type="checkbox" name="saida_durante_expediente" id="saidurante_checkbox" value="saida_durante_expediente">Saida durante expediente</label>
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-6">
 									<input type="hidden" name="saiantes_hidden" id="saiantes_checkbox_hidden">
-									<div class="custom-checkbox custom-checkbox-primary">
-									
-										<input type="checkbox" name="saida_antecipada" id="saiantes_checkbox" value="saida_antecipada">
-										<label for="saiantes_checkbox">Antecipação do horario de saida</label>
+									<div class="checkbox">	
+										<label><input type="checkbox" name="saida_antecipada" id="saiantes_checkbox" value="saida_antecipada">Antecipação do horario de saida</label>
 									</div>
+								</div>
+								<div class="col-md-6">
 									<input type="hidden" name="falmeio_hidden" id="falmeio_checkbox_hidden">
-									<div class="custom-checkbox custom-checkbox-primary">
-									
-										<input type="checkbox" name="falta_saida_meio_periodo"  id="faltameio_checkbox" value="falta_saida_meio_periodo">
-										<label for="faltameio_checkbox">Falta/Saida meio periodo</label>
+									<div class="checkbox">
+										<label><input type="checkbox" name="falta_saida_meio_periodo"  id="faltameio_checkbox" value="falta_saida_meio_periodo">Falta/Saida meio periodo.</label>
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-6">
 									<input type="hidden" name="ausencia_hidden" id="ausencia_checkbox_hidden">
-									<div class="custom-checkbox custom-checkbox-primary">
-										
-										<input type="checkbox" name="ausencia_marcacao_saida"  id="n_marca_checkbox" value="ausencia_marcacao_saida">
-										<label for="ausencia_marcacao_saida">Ausência de marcação de ponto</label>
+									<div class="checkbox">
+										<label><input type="checkbox" name="ausencia_marcacao_saida"  id="n_marca_checkbox" value="ausencia_marcacao_saida">Ausência de marcação de ponto</label>
 									</div>
-									<div class="custom-checkbox custom-checkbox-primary">
+								</div>
+								<div class="col-md-6">
 									<input type="hidden" name="outro_hidden" id="outro_checkbox_hidden">
-										<input type="checkbox" name="outro"  id="outro_checkbox" value="outro">
-										<label for="outro">Outro</label>
+									<div class="checkbox">
+										<label><input type="checkbox" name="outro"  id="outro_checkbox" value="outro">Outro</label>
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-6">
-								<input type="hidden" name="folga_hidden" id="folga_checkbox_hidden">
-									<div class="custom-checkbox custom-checkbox-primary">
-									
-										<input type="checkbox" name="folga"  id="folga_checkbox" value="folga">
-										<label for="folga">Folga</label>
+									<input type="hidden" name="folga_hidden" id="folga_checkbox_hidden">
+									<div class="checkbox">
+										<label><input type="checkbox" name="folga"  id="folga_checkbox" value="folga">Folga</label>
 									</div>
+								</div>
+								<div class="col-md-6">
 									<input type="hidden" name="falintegral_hidden" id="falintegral_checkbox_hidden">
-									<div class="custom-checkbox custom-checkbox-primary">
-									
-										<input type="checkbox"  name="falta_ausencia_integral"  id="falinte_checkbox" value="falta_ausencia_integral">
-										<label for="falta_ausencia_integral">Falta/Ausência integral</label>
+									<div class="checkbox">
+										<label><input type="checkbox"  name="falta_ausencia_integral"  id="falinte_checkbox" value="falta_ausencia_integral">Falta/Ausência integral</label>
 									</div>
 								</div>
 							</div>
