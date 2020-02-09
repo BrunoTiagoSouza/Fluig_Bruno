@@ -19,7 +19,7 @@ $(document).ready(function(){
             }
         });
     }
-});
+})
 
 
 
@@ -89,7 +89,7 @@ function beforeSendValidate(currentStage, nextStage){
         throw(msg);
     }
 
-};
+}
 
 function escondeCampos(CURRENT_STATE){
     if(CURRENT_STATE === 4|| CURRENT_STATE === 0){
@@ -141,7 +141,7 @@ function escondeCampos(CURRENT_STATE){
             $('input[name="data_justificativa"]').val('data_justificativa');
         }
     } 
-};
+}
 
 function showAllDoc(){
     if($('input[name="atraso_hidden"]').val() !== ""){
@@ -156,14 +156,22 @@ function showAllDoc(){
     if($('input[name="falmeio_hidden"]').val() !== ""){
         $('input[name="falta_saida_meio_periodo"]').attr("checked", "checked");
     }
-    if($('input[name="ausen"]').val() !== ""){
-        $('input[name="saida_durante_expediente"]').attr("checked", "checked");
+    if($('input[name="ausencia_hidden"]').val() !== ""){
+        $('input[name="ausencia_marcacao_saida"]').attr("checked", "checked");
     }
-
+    if($('input[name="outro_hidden"]').val() !== ""){
+        $('input[name="outro"]').attr("checked", "checked");
+    }
+    if($('input[name="folga_hidden"]').val() !== ""){
+        $('input[name="folga"]').attr("checked", "checked");
+    }
+    if($('input[name="falintegral_hidden"]').val() !== ""){
+        $('input[name="falta_ausencia_integral"]').attr("checked", "checked");
+    }
     //checkbox aprovado
     if($('input[name="aceito_hidden"]').val() === 'S'){
         $('#aceito').attr('checked', 'checked');
     } else {
         $('#n_aceito').attr('checked', 'checked');
     }
-};
+}
