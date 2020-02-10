@@ -1,0 +1,151 @@
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css"/>
+		<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+		<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+		<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="fluig-style-guide">
+			<form name="form" role="form">
+				<!-- Informaçoes cliente -->
+				<div class="panel panel-default" id="informacoes_cliente">
+					<div class="panel-heading">
+						<h3 class="panel-title">Informaçoes Do Cliente</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-4">
+								<label for="cliente_nome">Nome: </label>
+								<input type="text" id="cliente_nome" name="cliente_nome" class="form-control input_cliente">
+							</div>
+							<div class="col-md-4">
+								<label for="cliente_cnpj">CNPJ: </label>
+								<input type="text" id="cliente_cnpj" name="cliente_cnpj" class="form-control input_cliente">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<label for="cliente_logradouro">Logradouro: </label>
+								<input type="text" id="cliente_logradouro" name="cliente_logradouro" class="form-control input_cliente">
+							</div>
+							<div class="col-md-2">
+								<label for="cliente_numero">Numero: </label>
+								<input type="text" id="cliente_numero" name="cliente_numero" class="form-control input_cliente">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-2">
+								<label for="cliente_cidade">Cidade: </label>
+								<input type="text" id="cliente_cidade" name="cliente_cidade" class="form-control input_cliente">
+							</div>
+							<div class="col-md-2">
+								<label for="cliente_estado">Estado: </label>
+								<input type="text" id="cliente_estado" name="cliente_estado" class="form-control input_cliente">
+							</div>
+							<div class="col-md-2">
+								<label for="clente_contato">Contato: </label>
+								<input type="text" id="cliente_contato" name="cliente_contato" class="form-control input_cliente">
+							</div>
+							<div class="col-md-2">
+								<label for="clente_cep">Cep: </label>
+								<input type="text" id="cliente_cep" name="cliente_cep" class="form-control input_cliente">
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- FIM :: Informaçoes Cliente-->
+				<!-- Endereço Entrega -->
+				<div class="panel panel-default" id="informacoes_cliente">
+					<div class="panel-heading">
+						<h3 class="panel-title">Endereço Entrega</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-4">
+								<label for="entrega_logradouro">Logradouro: </label>
+								<input type="text" id="entrega_logradouro" name="entrega_logradouro" class="form-control input_entrega">
+							</div>
+							<div class="col-md-4">
+								<label for="entrega_numero">Numero:</label>
+								<input type="text" id="entrega_numero" name="entrega_numero" class="form-control input_entrega">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<label for="entrega_cidade">Cidade: </label>
+								<input type="text" id="entrega_cidade" name="entrega_cidade" class="form-control input_entrega">
+							</div>
+							<div class="col-md-3">
+								<label for="entrega_estado">Estado: </label>
+								<input type="text" id="entrega_estado" name="entrega_estado" class="form-control input_entrega">
+							</div>
+							<div class="col-md-3">
+								<label for="entrega_cep">Cep: </label>
+								<input type="text" id="entrega_cep" name="entrega_cep" class="form-control input_entrega">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<label for="entrega_expediente">Expediente: </label>
+								<input type="text" id="entrega_expediente" name="entrega_expediente" class="form-control input_entrega">
+							</div>
+							<div class="col-md-3">
+								<label for="entrega_descarga">Ajuda Descarga: </label>
+								<select id="entrega_descarga" name="entrega_descarga" class="form-control input_entrega">
+									<option disabled selected value=""> Selecione Uma Opção </option>
+									<option>Acompanha</option>
+									<option>Não Acompanha</option>									
+								</select>
+							</div>
+							<div class="col-md-3">
+								<input type="hidden" name="entrega_doca_hidden" id="entrega_doca_checkbox_hidden">
+								<div class="checkbox">	
+									<label>
+									<input type="checkbox" name="entrega_doca" id="entrega_doca" value="entrega_doca">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- FIM :: Endereço Entrega -->
+				<!-- Informaçoes Ordem de compra -->
+				<!-- FIM :: Informaçoes Ordem de Compra-->
+				<!-- Informaçoes Manufatura	-->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Informaçoes Manufatura</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-4">
+								<label for="manufatura_cnpj">CPF/CNPJ: </label>
+								<input type="text" id="manufatura_cnpj" name="manufatura_cnpj" class="form-control input_manufatura">
+							</div>
+							<div class="col-md-4">
+								<label for="manufatura_insc_municipal">Insc. Municipal: </label>
+								<input type="text" id="manufatura_insc_municipal" name="manufatura_insc_municipal" class="form-control input_manufatura">
+							</div>
+							<div class="col-md-4">
+								<label for="manufatura_insc_estadual">Insc. Estadual: </label>
+								<input type="text" id="manufatura_insc_estadual" name="manufatura_insc_estadual" class="form-control input_manufatura">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<label for="manufatura_nome_razao">Nome/Razão: </label>
+								<input type="text" id="manufatura_nome_razao" name="manufatura_nome_razao" class="form-control input_manufatura">
+							</div>
+							<div class="col-md-6">
+								<label for="manufatura_email">E-mail: </label>
+								<input type="text" id="manufatura_email" name="manufatura_email" class="form-control input_manufatura">
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- FIM :: Informaçoes Manufatura -->
+			</form>
+		</div>
+	</body>
+</html>
