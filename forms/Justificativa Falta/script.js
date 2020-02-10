@@ -6,7 +6,8 @@ $(document).ready(function(){
     }
     
     
-    //$("#data_entrega_justificativa").mask('00/00/0000');
+    $("#colab_cpf").mask('000.000.000-00', {reverse: true});
+    $("#colab_rg").mask('000.000.000-00', {reverse: true});
     $('#colab_matricula').mask('000.000', {reverse: true});
     var mySimpleCalendar = FLUIGC.calendar('#data_entrega_justificativa');
 
@@ -35,6 +36,12 @@ function beforeSendValidate(currentStage, nextStage){
             msg += "É necessário selecionar um setor.<br>";
         }
         if($('input[name="colab_matricula"]').val() == ""){
+            msg += "É necessário preencher o campo matricula.<br>";
+        }
+        if($('input[name="colab_cpf"]').val() == ""){
+            msg += "É necessário preencher o campo matricula.<br>";
+        }
+        if($('input[name="colab_rg"]').val() == ""){
             msg += "É necessário preencher o campo matricula.<br>";
         }
 
