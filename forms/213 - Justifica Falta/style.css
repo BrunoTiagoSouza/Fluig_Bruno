@@ -1,0 +1,22 @@
+#style-custom .align-center {
+  text-align: center;
+}
+
+#style-custom .row-margin {
+  margin-top: 1.5%;
+}
+
+#style-custom .file-trash-icon {
+  color: red;
+  margin-right: 10px;
+}
+
+#style-custom .show-file-icon {
+  color: #45b6da;
+  margin-right: 5px;
+}
+
+/* Esconde o input */
+#style-custom input[type='file'] {
+  display: none;
+}

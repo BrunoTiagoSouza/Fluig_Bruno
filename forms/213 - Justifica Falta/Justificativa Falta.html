@@ -1,0 +1,201 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<link type="text/css" rel="stylesheet" href="style.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="./jquery.fileupload.js"></script>
+	<script type="text/javascript" src="jquery.mask.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+	<div class="fluig-style-guide">
+		<div id="style-custom">
+		<form name="form" role="form">
+			<!-- Identificação Colaborador -->
+			<div class="panel panel-default" id="indentificacao_colaborador">
+				<div class="panel-heading">
+					<h3 class="panel-title"><b>Colaborador</b></h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-3">
+							<label for="colab_cpf">CPF: </label>
+							<input type="text" id="colab_cpf" name="colab_cpf" class="form-control input_colab" mask="000.000.000-00">
+						</div>
+						<div class="col-md-9">
+							<label for="colab_nome">Nome Do Colaborador: </label>
+							<input type="text" id="colab_nome" name="colab_nome" class="form-control input_colab">
+						</div>
+					</div>
+					<div class="row row-margin">
+						<div class="col-md-3">
+							<label for="colab_setor">Setor: </label>
+							<!-- Select Setor -->
+							<select id="colab_setor" name="colab_setor" class="form-control input_colab">
+								<option value="">-- Selecione --</option>
+								<option value="logistica">Logistica</option>
+								<option value="usinagem">Usinagem</option>
+								<option value="planejamento">Planejamento</option>
+								<option value="financeiro">Financeiro</option>
+							</select>
+						</div>
+						<div class="col-md-3">
+							<label for="colab_turno">Turno: </label>
+							<select id="colab_turno" name="colab_turno" class="form-control input_colab">
+								<option value="">-- Selecione --</option>
+								<option value="primeiro">Primeiro (6:20 / 14:30)</option>
+								<option value="segundo">Segundo (13:35 / 22:30)</option>
+								<option value="terceiro">Terceiro (22:00 / 6:30)</option>
+								<option value="comercial">Comercial</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- FIM :: Identificação Colaborador -->
+			<!-- Motivo Checkbox -->
+			<div class="panel panel-default" id="Motivo_checkbox">
+				<div class="panel-heading">
+					<h3 class="panel-title"><b>Motivo Da Ausência</b></h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="row">
+								<div class="col-md-3 align-center">
+									<input type="hidden" name="atraso_hidden" id="atraso_checkbox_hidden">
+									<div class="custom-checkbox custom-checkbox-primary">
+										<input type="checkbox" id="atraso_checkbox" name="atraso_checkbox" value="atraso">
+										<label for="atraso_checkbox">Atraso</label>
+									</div>
+								</div>
+								<div class="col-md-3 align-center">
+									<input type="hidden" name="saidurante_hidden" id="saidurante_checkbox_hidden">
+									<div class="custom-checkbox custom-checkbox-primary">
+										<input type="checkbox" id="saida_durante_expediente" name="saida_durante_expediente" value="saida_durante_expediente">
+										<label for="saida_durante_expediente">Saida Durante Expediente</label>
+									</div>
+								</div>
+								<div class="col-md-3 align-center">
+									<input type="hidden" name="saida_antecipada_hidden" id="saida_antecipada_hidden">
+									<div class="custom-checkbox custom-checkbox-primary">
+										<input type="checkbox" id="saida_antecipada" name="saida_antecipada" value="saida_antecipada">
+										<label for="saida_antecipada">Antecipação do horario de saida</label>
+									</div>
+								</div>
+								<div class="col-md-3 align-center">
+									<input type="hidden" name="falmeio_hidden" id="falmeio_checkbox_hidden">
+									<div class="custom-checkbox custom-checkbox-primary">
+										<input type="checkbox" name="falta_saida_meio_periodo" id="falta_saida_meio_periodo"
+												value="falta_saida_meio_periodo">
+										<label for="falta_saida_meio_periodo">Falta/Saida meio periodo.</label>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 align-center">
+									<input type="hidden" name="ausencia_hidden" id="ausencia_checkbox_hidden">
+									<div class="custom-checkbox custom-checkbox-primary">
+										<input type="checkbox" name="ausencia_marcacao_saida" id="ausencia_marcacao_saida"
+												value="ausencia_marcacao_saida">
+										<label for="ausencia_marcacao_saida">Ausência de marcação de ponto</label>
+									</div>
+								</div>
+								<div class="col-md-3 align-center">
+									<input type="hidden" name="outro_hidden" id="outro_checkbox_hidden">
+									<div class="custom-checkbox custom-checkbox-primary">
+										<input type="checkbox" name="outro" id="outro" value="outro">
+										<label for="outro">Outro</label>
+									</div>
+								</div>
+								<div class="col-md-3 align-center">
+									<input type="hidden" name="folga_hidden" id="folga_checkbox_hidden">
+									<div class="custom-checkbox custom-checkbox-primary">
+										<input type="checkbox" name="folga" id="folga" value="folga">
+										<label for="folga">Folga</label>
+									</div>
+								</div>
+								<div class="col-md-3 align-center">
+									<input type="hidden" name="falintegral_hidden" id="falintegral_checkbox_hidden">
+									<div class="custom-checkbox custom-checkbox-primary">
+										<input type="checkbox" name="falta_ausencia_integral" id="falta_ausencia_integral"
+												value="falta_ausencia_integral">
+										<label for="falta_ausencia_integral">Falta/Ausência integral</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<!-- Anexo Foto/Atestado -->
+						<div class="col-md-3">
+							<input type="hidden" name="file_atestado_hidden" id="file_atestado_hidden">
+							<label for="file_atestado" class="file-label">
+								<i class="fluigicon fluigicon-cloud icon-md"></i>
+								<input type="file" name="file_atestado" id="file_atestado" data-url="/ecm/upload">
+							</label>
+						</div>
+					</div>
+					<div class="row" id="row-file-anexos"></div>
+				</div>
+			</div>
+			<!-- FIM :: Motivo Checkbox-->
+			<!-- Data e Assinatura -->
+			<div class="panel panel-default" id="data_assinatura">
+				<div class="panel-heading">
+					<h3 class="panel-title"><b>Data e Assinatura</b></h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<!-- Data de entrega do Atestado & Assinatura -->
+						<div class="col-md-3">
+							<label for="data_entrega_justificativa">Data Entrega Justificativa: </label>
+							<input type="text" id="data_entrega_justificativa" name="data_entrega_justificativa"
+								class="form-control date-picker">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- FIM :: Data e Assinatura -->
+			<!-- Análise RH -->
+			<div class="panel panel-default" id="justificativa">
+				<div class="panel-heading">
+					<h3 class="panel-title">Análise</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row" id="res_analise">
+						<div class="col-md-12">
+							<label>Aprovado</label>
+							<br>
+							<div class="custom-radio custom-radio-inline custom-radio-success">
+								<input type="radio" id="aceito" name="aceito" value="sim">
+								<label for="aceito">Sim</label>
+							</div>
+							<div class="custom-radio custom-radio-inline custom-radio-success">
+								<input type="radio" id="n_aceito" name="aceito" value="nao">
+								<label for="n_aceito">Nao</label>
+							</div>
+							<input type="hidden" name="aceito_hidden">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- FIM :: Análise RH -->
+			<!-- Registro Ponto Alterado -->
+			<div class="panel panel-default" id="registro">
+				<div class="panel-heading">
+					<h3 class="panel-title">Registro Ponto Alterado Com Sucesso!</h3>
+				</div>
+			</div>
+			<!-- FIM :: Registro Ponto Alterado -->
+		</form>
+	</div>
+	</div>
+</body>
+
+</html>
