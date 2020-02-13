@@ -3,7 +3,7 @@ $(document).ready(function () {
         var myCalendar = FLUIGC.calendar('.date-picker', {
             useCurrent: false
         });
-
+        console.log("oi " +CURRENT_STATE);
         $('#file_atestado').fileupload({
             dataType: 'json',
             done: function (e, data) {
@@ -56,7 +56,7 @@ $(document).ready(function () {
                 }
             });
         }
-
+    
         escondeCampos(CURRENT_STATE);
     } else {
         showAllDoc();
@@ -169,9 +169,9 @@ function beforeSendValidate(currentStage, nextStage) {
         if ($('input[name="falta_ausencia_integral"]:checked').val() === 'falta_ausencia_integral') {
             $('input[name="falintegral_hidden"]').val('falta_ausencia_integral');
         }
-        if ($('input[name="data_entrega_justificativa"]').val() === 'data_entrega_justificativa') {
+        /*if ($('input[name="data_entrega_justificativa"]').val() === 'data_entrega_justificativa') {
             $('input[name="data_entrega_hidden"]').val('data_entrega_justificativa');
-        }
+        }*/
     } else if (CURRENT_STATE === 19) {
         //valida a justificativa
         if (!$('input[name="aceito"]:checked').val()) {
@@ -191,6 +191,7 @@ function escondeCampos(CURRENT_STATE) {
     } else if (CURRENT_STATE === 19) {
         $('#registro').hide();
         checkboxSaves();
+        
         $('.input_colab').attr('readonly', 'readonly');
         $('#atraso_checkbox').attr('disabled', 'disabled');
         $('#saida_durante_expediente').attr('disabled', 'disabled');
@@ -211,7 +212,37 @@ function escondeCampos(CURRENT_STATE) {
 
 
         checkboxSaves();
+        console.log('estou aqui estado 14');
 
+        
+
+
+        $('.input_colab').attr('readonly', 'readonly');
+        $('#atraso_checkbox').attr('disabled', 'disabled');
+        $('#saida_durante_expediente').attr('disabled', 'disabled');
+        $('#saida_antecipada').attr('disabled', 'disabled');
+        $('#falta_saida_meio_periodo').attr('disabled', 'disabled');
+        $('#ausencia_marcacao_saida').attr('disabled', 'disabled');
+        $('#outro').attr('disabled', 'disabled');
+        $('#folga').attr('disabled', 'disabled');
+        $('#falta_ausencia_integral').attr('disabled', 'disabled');
+        $('#file_atestado').attr('disabled', 'disabled');
+        $('#data_entrega_justificativa').attr('disabled', 'disabled');
+        $('#aceito').attr('disabled', 'disabled');
+        $('#n_aceito').attr('disabled', 'disabled');
+
+        if ($('input[name="aceito_hidden"]').val() === 'S') {
+            $('#aceito').attr('checked', 'checked');
+        } else {
+            $('#n_aceito').attr('checked', 'checked');
+        }
+
+
+    } else if(CURRENT_STATE === 16){
+        checkboxSaves();
+        console.log('estou aqui estado 16');
+        
+        
         if ($('input[name="aceito_hidden"]').val() === 'S') {
             $('#aceito').attr('checked', 'checked');
         } else {
@@ -232,12 +263,13 @@ function escondeCampos(CURRENT_STATE) {
         $('#data_entrega_justificativa').attr('disabled', 'disabled');
         $('#aceito').attr('disabled', 'disabled');
         $('#n_aceito').attr('disabled', 'disabled');
-
-
     }
+        
+
 }
 
 function showAllDoc() {
+    console.log("estou aqui estado showallDoc");
     if ($('input[name="atraso_hidden"]').val() !== "") {
         $('input[name="atraso"]').attr("checked", "checked");
     }
