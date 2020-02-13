@@ -154,6 +154,7 @@
 					<div class="row">
 						<!-- Data de entrega do Atestado & Assinatura -->
 						<div class="col-md-3">
+							<input type="hidden" name="data_entrega_justificativa_hidden" id="data_entrega_justificativa_hidden">
 							<label for="data_entrega_justificativa">Data Entrega Justificativa: </label>
 							<input type="text" id="data_entrega_justificativa" name="data_entrega_justificativa"
 								class="form-control date-picker">
@@ -170,7 +171,7 @@
 				<div class="panel-body">
 					<div class="row" id="res_analise">
 						<div class="col-md-12">
-							<label>Aprovado</label>
+							<label>Aprova Alteração: </label>
 							<br>
 							<div class="custom-radio custom-radio-inline custom-radio-success">
 								<input type="radio" id="aceito" name="aceito" value="sim">
@@ -180,7 +181,7 @@
 								<input type="radio" id="n_aceito" name="aceito" value="nao">
 								<label for="n_aceito">Nao</label>
 							</div>
-							<input type="hidden" name="aceito_hidden">
+							<input type="hidden" name="aceito_hidden" id="aceito_hidden">
 						</div>
 					</div>
 				</div>

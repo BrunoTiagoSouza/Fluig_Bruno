@@ -1,9 +1,13 @@
 $(document).ready(function () {
     if (CURRENT_STATE !== null) {
         var myCalendar = FLUIGC.calendar('.date-picker', {
-            useCurrent: false
+            useCurrent: false,
+            pickDate: true,
+            pickTime: false
         });
-        console.log("oi " +CURRENT_STATE);
+        
+      
+
         $('#file_atestado').fileupload({
             dataType: 'json',
             done: function (e, data) {
@@ -34,7 +38,7 @@ $(document).ready(function () {
                                 message: "Arquivo enviado com sucesso!",
                                 type: 'success'
                             });
-
+                            idAnexo = data.content.id;
                             $('input[name="file_atestado_hidden"]').val($('input[name="file_atestado_hidden"]').val() + data.content.id + "*" + data.content.description + "|");
                             $('#row-file-anexos').append('<div class="row" id="' + data.content.id + '">'
                                 + '<div class="col-md-12">'
@@ -130,18 +134,21 @@ function beforeSendValidate(currentStage, nextStage) {
             msg += "É necessário preencher o campo <strong>Nome</strong>.<br>";
         }
         if ($('input[name="colab_setor"]').val() === "") {
-            msg += "É necessário selecionar um setor.<br>";
+            msg += "É necessário selecionar um <strong>Setor</strong>.<br>";
         }
         if ($('input[name="colab_matricula"]').val() == "") {
-            msg += "É necessário preencher o campo matricula.<br>";
+            msg += "É necessário preencher o campo <strong>Matricula</strong>.<br>";
         }
         if ($('input[name="colab_cpf"]').val() == "") {
-            msg += "É necessário preencher o campo CPF.<br>";
+            msg += "É necessário preencher o campo <strong>CPF</strong>.<br>";
+        }
+        if($('input[name="data_entrega_justificativa"]').val() == ""){
+            msg += "É necessario preencher o campo <strong>Data</strong>"
         }
 
         //Validandoo checkboxes
         if (!$('input[name="atraso"]:checked').val() && !$('input[name="saida_durante_expediente"]:checked').val() && !$('input[name="saida_antecipada"]:checked').val() && !$('input[name="falta_saida_meio_periodo"]:checked').val() && !$('input[name="ausencia_marcacao_saida"]:checked').val() && !$('input[name="outro"]:checked').val() && !$('input[name="folga"]:checked').val() && !$('input[name="falta_ausencia_integral"]:checked').val() && !$('input[name="data_entrega_justificativa"]').val()) {
-            msg += "Você deve selecionar um motivo.<br>";
+            msg += "Você deve selecionar um <strong>Motivo</strong>.<br>";
         }
 
         //guarda a escolha dos checkbox 
@@ -169,13 +176,11 @@ function beforeSendValidate(currentStage, nextStage) {
         if ($('input[name="falta_ausencia_integral"]:checked').val() === 'falta_ausencia_integral') {
             $('input[name="falintegral_hidden"]').val('falta_ausencia_integral');
         }
-        /*if ($('input[name="data_entrega_justificativa"]').val() === 'data_entrega_justificativa') {
-            $('input[name="data_entrega_hidden"]').val('data_entrega_justificativa');
-        }*/
+        
     } else if (CURRENT_STATE === 19) {
         //valida a justificativa
         if (!$('input[name="aceito"]:checked').val()) {
-            msg += "Voce deve aceitar ou negar a justificativa";
+            msg += "Voce deve aceitar ou negar a <strong>justificativa</strong>";
         }
     }
     if (msg !== '') {
@@ -191,7 +196,7 @@ function escondeCampos(CURRENT_STATE) {
     } else if (CURRENT_STATE === 19) {
         $('#registro').hide();
         checkboxSaves();
-        
+        // esconder icone do anexo
         $('.input_colab').attr('readonly', 'readonly');
         $('#atraso_checkbox').attr('disabled', 'disabled');
         $('#saida_durante_expediente').attr('disabled', 'disabled');
@@ -210,13 +215,9 @@ function escondeCampos(CURRENT_STATE) {
 
     } else if (CURRENT_STATE === 14) {
 
-
         checkboxSaves();
-        console.log('estou aqui estado 14');
 
         
-
-
         $('.input_colab').attr('readonly', 'readonly');
         $('#atraso_checkbox').attr('disabled', 'disabled');
         $('#saida_durante_expediente').attr('disabled', 'disabled');
@@ -236,40 +237,11 @@ function escondeCampos(CURRENT_STATE) {
         } else {
             $('#n_aceito').attr('checked', 'checked');
         }
-
-
-    } else if(CURRENT_STATE === 16){
-        checkboxSaves();
-        console.log('estou aqui estado 16');
-        
-        
-        if ($('input[name="aceito_hidden"]').val() === 'S') {
-            $('#aceito').attr('checked', 'checked');
-        } else {
-            $('#n_aceito').attr('checked', 'checked');
-        }
-
-
-        $('.input_colab').attr('readonly', 'readonly');
-        $('#atraso_checkbox').attr('disabled', 'disabled');
-        $('#saida_durante_expediente').attr('disabled', 'disabled');
-        $('#saida_antecipada').attr('disabled', 'disabled');
-        $('#falta_saida_meio_periodo').attr('disabled', 'disabled');
-        $('#ausencia_marcacao_saida').attr('disabled', 'disabled');
-        $('#outro').attr('disabled', 'disabled');
-        $('#folga').attr('disabled', 'disabled');
-        $('#falta_ausencia_integral').attr('disabled', 'disabled');
-        $('#file_atestado').attr('disabled', 'disabled');
-        $('#data_entrega_justificativa').attr('disabled', 'disabled');
-        $('#aceito').attr('disabled', 'disabled');
-        $('#n_aceito').attr('disabled', 'disabled');
-    }
-        
-
+    } 
 }
 
 function showAllDoc() {
-    console.log("estou aqui estado showallDoc");
+    
     if ($('input[name="atraso_hidden"]').val() !== "") {
         $('input[name="atraso"]').attr("checked", "checked");
     }
@@ -328,7 +300,5 @@ function checkboxSaves() {
     if ($('input[name="falintegral_hidden"]').val() !== "") {
         $('input[name="falta_ausencia_integral"]').attr("checked", "checked");
     }
-    if ($('input[name="data_justificativa_hidden"]').val() !== "") {
-        $('input[name="data_justificativa"]').val('data_justificativa');
-    }
+    
 }
