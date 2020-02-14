@@ -1,9 +1,9 @@
 $(document).ready(function () {
+
+    var idAnexo = "";
     if (CURRENT_STATE !== null) {
         var myCalendar = FLUIGC.calendar('.date-picker', {
-            useCurrent: false,
-            pickDate: true,
-            pickTime: false
+            useCurrent: false
         });
         
       
@@ -38,7 +38,8 @@ $(document).ready(function () {
                                 message: "Arquivo enviado com sucesso!",
                                 type: 'success'
                             });
-                            idAnexo = data.content.id;
+                            idAnexo = parseInt(data.content.id);
+                            console.log(data.content.id);
                             $('input[name="file_atestado_hidden"]').val($('input[name="file_atestado_hidden"]').val() + data.content.id + "*" + data.content.description + "|");
                             $('#row-file-anexos').append('<div class="row" id="' + data.content.id + '">'
                                 + '<div class="col-md-12">'
@@ -59,6 +60,12 @@ $(document).ready(function () {
                     $('input[name="aceito_hidden"]').val('N');
                 }
             });
+                            $('#row-file-anexos').append('<div class="row" id="' + idAnexo + '">'
+                                + '<div class="col-md-12">'
+                                + '<a onclick="showFile(\'' + idAnexo + '\')"><i class="fluigicon fluigicon-eye-open icon-sm show-file-icon"></i></a>'
+                                + '<a onclick="deleteFile(\'' + idAnexo + '\',\'file_atestado_hidden\')"><i class="fluigicon fluigicon-trash icon-sm file-trash-icon"></i></a>'
+                                + '<span>' + idAnexo + '</span></div></div>');
+                        
         }
     
         escondeCampos(CURRENT_STATE);
@@ -130,20 +137,20 @@ function beforeSendValidate(currentStage, nextStage) {
 
     if (CURRENT_STATE === 4 || CURRENT_STATE === 0) {
         //validando inputs
-        if ($('input[name="colab_nome"]').val() == "") {
+        if ($('input[name="colab_nome"]').val() === "") {
             msg += "É necessário preencher o campo <strong>Nome</strong>.<br>";
         }
-        if ($('input[name="colab_setor"]').val() === "") {
+        if ($('input[name="colab_setor"]').val() == "") {
             msg += "É necessário selecionar um <strong>Setor</strong>.<br>";
         }
-        if ($('input[name="colab_matricula"]').val() == "") {
-            msg += "É necessário preencher o campo <strong>Matricula</strong>.<br>";
-        }
-        if ($('input[name="colab_cpf"]').val() == "") {
+        if ($('input[name="colab_cpf"]').val() === "") {
             msg += "É necessário preencher o campo <strong>CPF</strong>.<br>";
         }
-        if($('input[name="data_entrega_justificativa"]').val() == ""){
-            msg += "É necessario preencher o campo <strong>Data</strong>"
+        if($('input[name="colab_turno"]').val() == ""){
+            msg += "É necessario preencher o campo <strong>Turno</strong>.<br>"
+        }
+        if($('input[name="data_justificativa"]').val() === ""){
+            msg += "É necessario preencher o campo <strong>Data</strong>.<br>"
         }
 
         //Validandoo checkboxes
