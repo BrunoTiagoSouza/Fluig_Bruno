@@ -60,12 +60,6 @@ $(document).ready(function () {
                     $('input[name="aceito_hidden"]').val('N');
                 }
             });
-                            $('#row-file-anexos').append('<div class="row" id="' + idAnexo + '">'
-                                + '<div class="col-md-12">'
-                                + '<a onclick="showFile(\'' + idAnexo + '\')"><i class="fluigicon fluigicon-eye-open icon-sm show-file-icon"></i></a>'
-                                + '<a onclick="deleteFile(\'' + idAnexo + '\',\'file_atestado_hidden\')"><i class="fluigicon fluigicon-trash icon-sm file-trash-icon"></i></a>'
-                                + '<span>' + idAnexo + '</span></div></div>');
-                        
         }
     
         escondeCampos(CURRENT_STATE);
@@ -138,25 +132,23 @@ function beforeSendValidate(currentStage, nextStage) {
     if (CURRENT_STATE === 4 || CURRENT_STATE === 0) {
         //validando inputs
         if ($('input[name="colab_nome"]').val() === "") {
-            msg += "É necessário preencher o campo <strong>Nome</strong>.<br>";
+            msg += "É Necessário Preencher O Campo <strong>Nome</strong>.<br>";
         }
         if ($('input[name="colab_setor"]').val() == "") {
-            msg += "É necessário selecionar um <strong>Setor</strong>.<br>";
+            msg += "É Necessário Preencher O Campo <strong>Setor</strong>.<br>";
         }
         if ($('input[name="colab_cpf"]').val() === "") {
-            msg += "É necessário preencher o campo <strong>CPF</strong>.<br>";
+            msg += "É Necessário Preencher O Campo <strong>CPF</strong>.<br>";
         }
         if($('input[name="colab_turno"]').val() == ""){
-            msg += "É necessario preencher o campo <strong>Turno</strong>.<br>"
+            msg += "É Necessário Preencher O Campo <strong>Turno</strong>.<br>"
         }
         if($('input[name="data_justificativa"]').val() === ""){
-            msg += "É necessario preencher o campo <strong>Data</strong>.<br>"
+            msg += "É Necessário Preencher O Campo <strong>Data</strong>.<br>"
         }
 
         //Validandoo checkboxes
-        if (!$('input[name="atraso"]:checked').val() && !$('input[name="saida_durante_expediente"]:checked').val() && !$('input[name="saida_antecipada"]:checked').val() && !$('input[name="falta_saida_meio_periodo"]:checked').val() && !$('input[name="ausencia_marcacao_saida"]:checked').val() && !$('input[name="outro"]:checked').val() && !$('input[name="folga"]:checked').val() && !$('input[name="falta_ausencia_integral"]:checked').val() && !$('input[name="data_entrega_justificativa"]').val()) {
-            msg += "Você deve selecionar um <strong>Motivo</strong>.<br>";
-        }
+        
 
         //guarda a escolha dos checkbox 
         if ($('input[name="atraso"]:checked').val() === 'atraso') {
@@ -183,11 +175,18 @@ function beforeSendValidate(currentStage, nextStage) {
         if ($('input[name="falta_ausencia_integral"]:checked').val() === 'falta_ausencia_integral') {
             $('input[name="falintegral_hidden"]').val('falta_ausencia_integral');
         }
+        if($('input[name="data_justificativa"]').val() === "data_justificativa"){
+            $('input[name="data_justificativa_hidden').val('data_justificativa');
+        }
+
+        if (!$('input[name="atraso"]:checked').val() && !$('input[name="saida_durante_expediente"]:checked').val() && !$('input[name="saida_antecipada"]:checked').val() && !$('input[name="falta_saida_meio_periodo"]:checked').val() && !$('input[name="ausencia_marcacao_saida"]:checked').val() && !$('input[name="outro"]:checked').val() && !$('input[name="folga"]:checked').val() && !$('input[name="falta_ausencia_integral"]:checked').val() && !$('input[name="data_entrega_justificativa"]').val()) {
+            msg += "É Necessário Preencher O Campo <strong>Motivo</strong>.<br>";
+        }
         
     } else if (CURRENT_STATE === 19) {
         //valida a justificativa
         if (!$('input[name="aceito"]:checked').val()) {
-            msg += "Voce deve aceitar ou negar a <strong>justificativa</strong>";
+            msg += "É Necessário Aceitar Ou Negar A <strong>Justificativa</strong>";
         }
     }
     if (msg !== '') {
@@ -221,10 +220,7 @@ function escondeCampos(CURRENT_STATE) {
 
 
     } else if (CURRENT_STATE === 14) {
-
         checkboxSaves();
-
-        
         $('.input_colab').attr('readonly', 'readonly');
         $('#atraso_checkbox').attr('disabled', 'disabled');
         $('#saida_durante_expediente').attr('disabled', 'disabled');

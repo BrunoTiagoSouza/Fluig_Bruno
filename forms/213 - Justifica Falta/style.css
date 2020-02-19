@@ -11,8 +11,9 @@
   margin-right: 10px;
 }
 
-#style-custom .show-file-icon {
+#style-custom .file-label {
   color: #45b6da;
+  margin-top: 5px;
   margin-right: 5px;
 }
 
