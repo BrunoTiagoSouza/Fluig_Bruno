@@ -218,8 +218,9 @@ function escondeCampos(CURRENT_STATE) {
         $('#data_entrega_justificativa').attr('disabled', 'disabled');
 
     } else if (CURRENT_STATE === 14) {
-        checkboxSaves();
+        
         $('.input_colab').attr('readonly', 'readonly');
+        checkboxSaves();
         $('#atraso_checkbox').attr('disabled', 'disabled');
         $('#saida_durante_expediente').attr('disabled', 'disabled');
         $('#saida_antecipada').attr('disabled', 'disabled');
@@ -267,8 +268,8 @@ function showAllDoc() {
     if ($('input[name="falintegral_hidden"]').val() !== "") {
         $('input[name="falta_ausencia_integral"]').attr("checked", "checked");
     }
-    if($('input[name="data_justificativa"]').val() === 'data_justificativa'){
-        $('input[name="data_justificativa_hidden').val('data_justificativa');
+    if($('input[name="data_justificativa_hidden"]').val() !== ""){
+        $('input[name="data_justificativa').val('data_justificativa_hidden');
     }
     //checkbox aprovado
     if ($('input[name="aceito_hidden"]').val() === 'S') {
@@ -304,8 +305,7 @@ function checkboxSaves() {
     if ($('input[name="falintegral_hidden"]').val() !== "") {
         $('input[name="falta_ausencia_integral"]').attr("checked", "checked");
     }
-    if($('input[name="data_justificativa_hidden"]').val() === 'data_justificativa'){
-        $('input[name="data_justificativa').val('data_justificativa');
+    if($('input[name="data_justificativa_hidden"]').val() !== ""){
+        $('input[name="data_justificativa').val('data_justificativa_hidden');
     }
-    
 }
