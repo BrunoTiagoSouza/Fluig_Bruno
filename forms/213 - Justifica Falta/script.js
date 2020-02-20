@@ -1,13 +1,9 @@
 $(document).ready(function () {
-
-    var idAnexo = "";
     if (CURRENT_STATE !== null) {
         var myCalendar = FLUIGC.calendar('.date-picker', {
             useCurrent: false
         });
         
-      
-
         $('#file_atestado').fileupload({
             dataType: 'json',
             done: function (e, data) {
@@ -38,8 +34,7 @@ $(document).ready(function () {
                                 message: "Arquivo enviado com sucesso!",
                                 type: 'success'
                             });
-                            idAnexo = parseInt(data.content.id);
-                            console.log(data.content.id);
+                            
                             $('input[name="file_atestado_hidden"]').val($('input[name="file_atestado_hidden"]').val() + data.content.id + "*" + data.content.description + "|");
                             $('#row-file-anexos').append('<div class="row" id="' + data.content.id + '">'
                                 + '<div class="col-md-12">'
@@ -134,21 +129,30 @@ function beforeSendValidate(currentStage, nextStage) {
         if ($('input[name="colab_nome"]').val() === "") {
             msg += "É Necessário Preencher O Campo <strong>Nome</strong>.<br>";
         }
-        if ($('input[name="colab_setor"]').val() == "") {
+        if ($('input[name="colab_setor"]').val() === "") {
             msg += "É Necessário Preencher O Campo <strong>Setor</strong>.<br>";
         }
         if ($('input[name="colab_cpf"]').val() === "") {
             msg += "É Necessário Preencher O Campo <strong>CPF</strong>.<br>";
         }
-        if($('input[name="colab_turno"]').val() == ""){
+        if($('#colab_turno option:selected').val() === "") {
             msg += "É Necessário Preencher O Campo <strong>Turno</strong>.<br>"
         }
         if($('input[name="data_justificativa"]').val() === ""){
-            msg += "É Necessário Preencher O Campo <strong>Data</strong>.<br>"
+            msg += "É Necessário Preencher O Campo <strong>Data</strong>.<br>";
         }
 
         //Validandoo checkboxes
-        
+        if (!$('input[name="atraso"]:checked').val() 
+        && !$('input[name="saida_durante_expediente"]:checked').val() 
+        && !$('input[name="saida_antecipada"]:checked').val() 
+        && !$('input[name="falta_saida_meio_periodo"]:checked').val() 
+        && !$('input[name="ausencia_marcacao_saida"]:checked').val() 
+        && !$('input[name="outro"]:checked').val() 
+        && !$('input[name="folga"]:checked').val() 
+        && !$('input[name="falta_ausencia_integral"]:checked').val()) {
+            msg += "É Necessário Preencher O Campo <strong>Motivo</strong>.<br>";
+        }
 
         //guarda a escolha dos checkbox 
         if ($('input[name="atraso"]:checked').val() === 'atraso') {
@@ -175,13 +179,11 @@ function beforeSendValidate(currentStage, nextStage) {
         if ($('input[name="falta_ausencia_integral"]:checked').val() === 'falta_ausencia_integral') {
             $('input[name="falintegral_hidden"]').val('falta_ausencia_integral');
         }
-        if($('input[name="data_justificativa"]').val() === "data_justificativa"){
+        if($('input[name="data_justificativa"]').val() === 'data_justificativa'){
             $('input[name="data_justificativa_hidden').val('data_justificativa');
         }
 
-        if (!$('input[name="atraso"]:checked').val() && !$('input[name="saida_durante_expediente"]:checked').val() && !$('input[name="saida_antecipada"]:checked').val() && !$('input[name="falta_saida_meio_periodo"]:checked').val() && !$('input[name="ausencia_marcacao_saida"]:checked').val() && !$('input[name="outro"]:checked').val() && !$('input[name="folga"]:checked').val() && !$('input[name="falta_ausencia_integral"]:checked').val() && !$('input[name="data_entrega_justificativa"]').val()) {
-            msg += "É Necessário Preencher O Campo <strong>Motivo</strong>.<br>";
-        }
+       
         
     } else if (CURRENT_STATE === 19) {
         //valida a justificativa
@@ -215,10 +217,6 @@ function escondeCampos(CURRENT_STATE) {
         $('#file_atestado').attr('disabled', 'disabled');
         $('#data_entrega_justificativa').attr('disabled', 'disabled');
 
-        
-        
-
-
     } else if (CURRENT_STATE === 14) {
         checkboxSaves();
         $('.input_colab').attr('readonly', 'readonly');
@@ -240,7 +238,7 @@ function escondeCampos(CURRENT_STATE) {
         } else {
             $('#n_aceito').attr('checked', 'checked');
         }
-    } 
+    }
 }
 
 function showAllDoc() {
@@ -268,6 +266,9 @@ function showAllDoc() {
     }
     if ($('input[name="falintegral_hidden"]').val() !== "") {
         $('input[name="falta_ausencia_integral"]').attr("checked", "checked");
+    }
+    if($('input[name="data_justificativa"]').val() === 'data_justificativa'){
+        $('input[name="data_justificativa_hidden').val('data_justificativa');
     }
     //checkbox aprovado
     if ($('input[name="aceito_hidden"]').val() === 'S') {
@@ -302,6 +303,9 @@ function checkboxSaves() {
     }
     if ($('input[name="falintegral_hidden"]').val() !== "") {
         $('input[name="falta_ausencia_integral"]').attr("checked", "checked");
+    }
+    if($('input[name="data_justificativa_hidden"]').val() === 'data_justificativa'){
+        $('input[name="data_justificativa').val('data_justificativa');
     }
     
 }
